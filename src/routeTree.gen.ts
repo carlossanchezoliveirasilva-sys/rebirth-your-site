@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ImplementosAgricolasRouteImport } from './routes/implementos-agricolas'
 import { Route as PlacasPersonalizadasRouteImport } from './routes/placas-personalizadas'
 import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImplementosAgricolasRoute = ImplementosAgricolasRouteImport.update({
+  id: '/implementos-agricolas',
+  path: '/implementos-agricolas',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlacasPersonalizadasRoute = PlacasPersonalizadasRouteImport.update({
@@ -31,30 +37,47 @@ const ServicosSlugRoute = ServicosSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/implementos-agricolas': typeof ImplementosAgricolasRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
   '/servicos/$slug': typeof ServicosSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/implementos-agricolas': typeof ImplementosAgricolasRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
   '/servicos/$slug': typeof ServicosSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/implementos-agricolas': typeof ImplementosAgricolasRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
   '/servicos/$slug': typeof ServicosSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/placas-personalizadas' | '/servicos/$slug'
+  fullPaths:
+    | '/'
+    | '/implementos-agricolas'
+    | '/placas-personalizadas'
+    | '/servicos/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/placas-personalizadas' | '/servicos/$slug'
-  id: '__root__' | '/' | '/placas-personalizadas' | '/servicos/$slug'
+  to:
+    | '/'
+    | '/implementos-agricolas'
+    | '/placas-personalizadas'
+    | '/servicos/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/implementos-agricolas'
+    | '/placas-personalizadas'
+    | '/servicos/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ImplementosAgricolasRoute: typeof ImplementosAgricolasRoute
   PlacasPersonalizadasRoute: typeof PlacasPersonalizadasRoute
   ServicosSlugRoute: typeof ServicosSlugRoute
 }
@@ -66,6 +89,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/implementos-agricolas': {
+      id: '/implementos-agricolas'
+      path: '/implementos-agricolas'
+      fullPath: '/implementos-agricolas'
+      preLoaderRoute: typeof ImplementosAgricolasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/placas-personalizadas': {
@@ -87,6 +117,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ImplementosAgricolasRoute: ImplementosAgricolasRoute,
   PlacasPersonalizadasRoute: PlacasPersonalizadasRoute,
   ServicosSlugRoute: ServicosSlugRoute,
 }
