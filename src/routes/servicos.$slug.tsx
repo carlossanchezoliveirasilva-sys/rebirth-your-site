@@ -22,6 +22,7 @@ const images: Record<ImageKey, string> = {
 export const Route = createFileRoute("/servicos/$slug")({
   loader: ({ params }) => {
     const moved = legacySlugs[params.slug];
+    if (moved === "implementos-agricolas" || params.slug === "implementos-agricolas") throw redirect({ to: "/implementos-agricolas", statusCode: 301 });
     if (moved) throw redirect({ to: "/servicos/$slug", params: { slug: moved }, statusCode: 301 });
     const service = getService(params.slug);
     if (!service) throw notFound();
@@ -89,6 +90,7 @@ function ServicePage() {
           </Link>
           <nav className="flex items-center gap-5 text-xs font-mono uppercase tracking-widest">
             <Link to="/" hash="servicos" className="text-muted-foreground hover:text-foreground">Serviços</Link>
+            <Link to="/implementos-agricolas" className="text-muted-foreground hover:text-foreground hidden sm:inline">Implementos</Link>
             <Link to="/" hash="contato" className="text-muted-foreground hover:text-foreground">Contato</Link>
           </nav>
         </div>
@@ -146,7 +148,7 @@ function ServicePage() {
             <h2 className="font-display text-3xl uppercase mb-8">Serviços relacionados</h2>
             <div className="grid sm:grid-cols-3 gap-4">
               {related.map((r) => (
-                <Link key={r.slug} to="/servicos/$slug" params={{ slug: r.slug }} className="border border-border/60 p-6 hover:border-primary transition-colors">
+                <Link key={r.slug} to={r.slug === "implementos-agricolas" ? "/implementos-agricolas" : "/servicos/$slug"} params={r.slug === "implementos-agricolas" ? undefined : { slug: r.slug }} className="border border-border/60 p-6 hover:border-primary transition-colors">
                   <span className="font-display text-xl uppercase">{r.name}</span>
                   <span className="block mt-3 text-xs font-mono uppercase tracking-widest text-primary">Ver serviço →</span>
                 </Link>
