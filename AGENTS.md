@@ -8,3 +8,10 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Application rules
+- Keep the target TanStack starter runtime and dependencies; migrate only inspected presentation code to avoid importing external runtime configuration.
+- Preserve the source site's two public URLs and in-page navigation during recreation so existing navigation behavior remains intact.
+- Store imported photos and logos as asset pointers; use their URLs rather than committing binary media.
+- Keep quote requests as WhatsApp and email handoffs, with reference images attached manually in WhatsApp; the source has no database or automatic email delivery.
+- Keep plate pricing in a browser-safe calculation module with regression tests so original estimates remain consistent.
