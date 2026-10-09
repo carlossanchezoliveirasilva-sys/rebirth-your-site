@@ -186,3 +186,4 @@ export const services: Service[] = [
 export const getService = (slug: string) => services.find((s) => s.slug === slug);
 
 export const whatsappLink = (msg: string) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+export const QUOTE_EMAIL = "contato@atrmetal.com.br";

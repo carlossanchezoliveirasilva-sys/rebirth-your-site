@@ -22,7 +22,7 @@ const imgArte = imgArteAsset.url;
 export const Route = createFileRoute("/placas-personalizadas")({
   head: () => ({
     meta: [
-      { title: "Placas Personalizadas em Aço Corten | ATR Metal" },
+      { title: "Placas Personalizadas em Aço Corten | ATR METAL" },
       {
         name: "description",
         content:
@@ -31,9 +31,9 @@ export const Route = createFileRoute("/placas-personalizadas")({
       {
         name: "keywords",
         content:
-          "placa em aço corten, placa para fazenda, letreiro em metal, logo em aço corten, placa personalizada, corte plasma artístico, decoração em aço corten, painel decorativo metálico, número residencial em metal, ATR Metal",
+          "placa em aço corten, placa para fazenda, letreiro em metal, logo em aço corten, placa personalizada, corte plasma artístico, decoração em aço corten, painel decorativo metálico, número residencial em metal, ATR METAL",
       },
-      { property: "og:title", content: "Placas Personalizadas em Aço Corten | ATR Metal" },
+      { property: "og:title", content: "Placas Personalizadas em Aço Corten | ATR METAL" },
       {
         property: "og:description",
         content:
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/placas-personalizadas")({
           "@context": "https://schema.org",
           "@type": "Product",
           name: "Placas Personalizadas em Aço Corten",
-          brand: { "@type": "Brand", name: "ATR Metal" },
+          brand: { "@type": "Brand", name: "ATR METAL" },
           description:
             "Placas e peças decorativas personalizadas em aço corten, carbono e inox, com corte CNC e plasma de alta precisão.",
           areaServed: "BR",
@@ -85,7 +85,7 @@ const diferenciais = [
   { t: "Personalização Total", d: "Produção conforme arte ou ideia do cliente." },
   { t: "Materiais Premium", d: "Aço Corten, Carbono e Inox de primeira linha." },
   { t: "Durabilidade", d: "Produtos resistentes para áreas internas e externas." },
-  { t: "Fabricação Própria", d: "Produzido inteiramente pela ATR Metal." },
+  { t: "Fabricação Própria", d: "Produzido inteiramente pela ATR METAL." },
   { t: "Entrega para Todo Brasil", d: "Envio seguro e rastreável." },
 ];
 
@@ -98,7 +98,7 @@ const passos = [
 ];
 
 const WA_MSG =
-  "Olá, gostaria de solicitar um orçamento para uma placa personalizada em aço corten produzida pela ATR Metal.";
+  "Olá, gostaria de solicitar um orçamento para uma placa personalizada em aço corten produzida pela ATR METAL.";
 const WA_LINK = `https://wa.me/5564992253474?text=${encodeURIComponent(WA_MSG)}`;
 
 const COUNTDOWN_SECONDS = 5 * 60;
@@ -168,7 +168,7 @@ function CalcSection() {
   }
 
   const waMsg = resultado
-    ? `Olá! Acabei de realizar um cálculo na calculadora da ATR Metal.\n\nDimensões:\n• Largura: ${largura} cm\n• Altura: ${altura} cm\n• Espessura: ${espessura} mm\n\nValor normal: ${formatCurrency(resultado.precoOriginal)}\n\nValor promocional com 10% de desconto: ${formatCurrency(resultado.precoPromocional)}\n\nGostaria de solicitar meu orçamento.`
+    ? `Olá! Acabei de realizar um cálculo na calculadora da ATR METAL.\n\nDimensões:\n• Largura: ${largura} cm\n• Altura: ${altura} cm\n• Espessura: ${espessura} mm\n\nValor normal: ${formatCurrency(resultado.precoOriginal)}\n\nValor promocional com 10% de desconto: ${formatCurrency(resultado.precoPromocional)}\n\nGostaria de solicitar meu orçamento.`
     : "";
   const waCalcLink = resultado
     ? `https://wa.me/5564992253474?text=${encodeURIComponent(waMsg)}`
@@ -376,8 +376,8 @@ function PlacasPage() {
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 md:px-6 gap-4">
-          <Link to="/" className="flex items-center gap-3 shrink-0" aria-label="ATR Metal">
-            <img src={logoAtr} alt="ATR Metal Indústria Metalúrgica" className="h-7 sm:h-8 md:h-10 w-auto" />
+          <Link to="/" className="flex items-center gap-3 shrink-0" aria-label="ATR METAL">
+            <img src={logoAtr} alt="ATR METAL Indústria Metalúrgica" className="h-7 sm:h-8 md:h-10 w-auto" />
           </Link>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
             <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
@@ -614,7 +614,7 @@ function PlacasPage() {
               <span className="h-px w-16 bg-border" />
             </div>
             <h2 className="text-display font-display uppercase">
-              Por que a <span className="text-ember-glow">ATR Metal.</span>
+              Por que a <span className="text-ember-glow">ATR METAL.</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border/40 border border-border/40">
@@ -702,8 +702,8 @@ function PlacasPage() {
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
                   E-mail
                 </div>
-                <a href="mailto:atr.metal.pdr@gmail.com" className="text-foreground hover:text-primary text-lg">
-                  atr.metal.pdr@gmail.com
+                <a href="mailto:contato@atrmetal.com.br" className="text-foreground hover:text-primary text-lg">
+                  contato@atrmetal.com.br
                 </a>
               </div>
             </div>
@@ -724,7 +724,7 @@ function PlacasPage() {
               const fileInfo = file && file.name ? `${file.name} (${Math.round(file.size / 1024)} KB)` : "—";
 
               const linhas = [
-                "*Nova solicitação — Placa Personalizada (ATR Metal)*",
+                "*Nova solicitação — Placa Personalizada (ATR METAL)*",
                 "",
                 `*Nome:* ${nome}`,
                 `*Cidade:* ${cidade}`,
@@ -742,7 +742,7 @@ function PlacasPage() {
               const assunto = `Orçamento Placa Personalizada — ${nome}${cidade ? " / " + cidade : ""}`;
 
               const wa = `https://wa.me/5564992253474?text=${encodeURIComponent(texto)}`;
-              const mail = `mailto:atr.metal.pdr@gmail.com?subject=${encodeURIComponent(
+              const mail = `mailto:contato@atrmetal.com.br?subject=${encodeURIComponent(
                 assunto,
               )}&body=${encodeURIComponent(corpoEmail)}`;
 
@@ -817,10 +817,10 @@ function PlacasPage() {
         <div className="diag-stripes h-2" />
         <div className="mx-auto max-w-7xl px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <img src={logoAtr} alt="ATR Metal" className="h-10 w-auto" />
+            <img src={logoAtr} alt="ATR METAL" className="h-10 w-auto" />
           </div>
           <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground text-center">
-            © {new Date().getFullYear()} ATR Metal · Placas Personalizadas em Aço Corten
+            © {new Date().getFullYear()} ATR METAL · Placas Personalizadas em Aço Corten
           </div>
           <Link to="/" className="text-sm text-muted-foreground hover:text-foreground">
             ← Voltar ao site
@@ -833,7 +833,7 @@ function PlacasPage() {
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Trabalho ATR Metal ampliado"
+          aria-label="Trabalho ATR METAL ampliado"
           onClick={() => setLightbox(null)}
           className="fixed inset-0 z-[60] bg-background/95 backdrop-blur-md grid place-items-center p-4 animate-in fade-in"
         >
@@ -847,7 +847,7 @@ function PlacasPage() {
           </Button>
           <img
             src={lightbox}
-            alt="Trabalho ATR Metal ampliado"
+            alt="Trabalho ATR METAL ampliado"
             className="max-h-[88vh] max-w-[92vw] object-contain border border-border"
             onClick={(e) => e.stopPropagation()}
           />
