@@ -20,26 +20,36 @@ import { Sparks } from "@/components/Sparks";
 import { Counter } from "@/components/Counter";
 import logoAtrAsset from "@/assets/logo-atr.svg.asset.json";
 const logoAtr = logoAtrAsset.url;
+import { services as seoServices, INSTAGRAM_URL, MAPS_URRUCUI_URL, URUCUI_LABEL, SITE_URL } from "@/lib/services";
+
+const homeTitle = "ATR METAL | Metalurgia, Usinagem e Manutenção Industrial";
+const homeDesc = "Calandragem, dobra, corte CNC plasma, oxicorte, usinagem, solda, locação de munck, implementos agrícolas e manutenção industrial. Unidades em Pires do Rio - GO e Uruçuí - PI.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ATR Metal — Indústria Metalúrgica em Pires do Rio, GO" },
-      { name: "description", content: "Engenharia em aço e potência em produção. Caldeiraria, corte CNC/plasma, calandra, dobra, estruturas e montagem industrial para o agronegócio em Goiás." },
-      { property: "og:title", content: "ATR Metal — Power to Produce" },
-      { property: "og:description", content: "Metalúrgica industrial pesada em Pires do Rio - GO. Fabricação, manutenção e montagem para sementeiras, caldeiras, cooperativas e armazéns." },
+      { title: homeTitle },
+      { name: "description", content: homeDesc },
+      { property: "og:title", content: homeTitle },
+      { property: "og:description", content: homeDesc },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
       ...(heroImg.startsWith("https://") ? [{ property: "og:image", content: heroImg }, { name: "twitter:image", content: heroImg }] : []),
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
     scripts: [{
       type: "application/ld+json",
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        name: "ATR Metal Indústria Metalúrgica",
+        name: "ATR METAL",
+        alternateName: ["ATR Metal Indústria Metalúrgica", "ATR Metal Forge"],
+        url: SITE_URL,
+        logo: logoAtr.startsWith("https://") ? logoAtr : undefined,
         image: heroImg,
         telephone: "+55 64 99225-3474",
+        sameAs: [INSTAGRAM_URL],
         address: {
           "@type": "PostalAddress",
           streetAddress: "Av. Priscila Maria de Lima Oliveira, Qd. 13A, Lt.22, Sala 02 - Jardim Goiás II",
@@ -48,7 +58,12 @@ export const Route = createFileRoute("/")({
           postalCode: "75200-000",
           addressCountry: "BR",
         },
-        areaServed: "Goiás",
+        areaServed: ["Goiás", "Piauí"],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Serviços",
+          itemListElement: seoServices.map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s.name, url: `${SITE_URL}/servicos/${s.slug}` } })),
+        },
       }),
     }],
   }),
@@ -383,6 +398,18 @@ function Home() {
               </article>
             ))}
           </div>
+          <div className="mt-16">
+            <h3 className="font-display text-2xl uppercase mb-6">Todos os nossos serviços</h3>
+            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {seoServices.map((s) => (
+                <li key={s.slug}>
+                  <Link to="/servicos/$slug" params={{ slug: s.slug }} className="flex items-center justify-between border border-border/60 px-5 py-4 hover:border-primary hover:text-primary transition-colors">
+                    {s.name}<span aria-hidden>→</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -542,13 +569,14 @@ function Home() {
             <div className="mt-10 space-y-5">
               {[
                 { l: "WhatsApp / Telefone", v: "(64) 99225-3474", h: "https://wa.me/5564992253474" },
-                { l: "Endereço", v: "Av. Priscila Maria de Lima Oliveira, Qd. 13A, Lt.22 — Jardim Goiás II, Pires do Rio - GO, 75200-000" },
-                { l: "Instagram", v: "@atrmetal", h: "https://instagram.com" },
+                { l: "Unidade Pires do Rio - GO", v: "Av. Priscila Maria de Lima Oliveira, Qd. 13A, Lt.22 — Jardim Goiás II, Pires do Rio - GO, 75200-000" },
+                { l: "Unidade Uruçuí - PI", v: URUCUI_LABEL },
+                { l: "Instagram", v: "@atr_metal", h: INSTAGRAM_URL },
               ].map((c) => (
                 <div key={c.l} className="border-l-2 border-primary pl-5">
                   <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{c.l}</div>
                   {c.h ? (
-                    <a href={c.h} target="_blank" rel="noopener" className="text-foreground hover:text-primary transition-colors text-lg">{c.v}</a>
+                    <a href={c.h} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors text-lg">{c.v}</a>
                   ) : (
                     <div className="text-foreground text-lg">{c.v}</div>
                   )}
@@ -558,11 +586,16 @@ function Home() {
 
             <div className="mt-10 aspect-[16/9] overflow-hidden border border-border/60 relative">
               <iframe
-                title="Localização ATR Metal"
+                title="Localização ATR METAL em Pires do Rio - GO"
                 src="https://www.google.com/maps?q=Pires+do+Rio+GO+Jardim+Goias+II&output=embed"
                 className="absolute inset-0 h-full w-full grayscale contrast-125"
                 loading="lazy"
               />
+            </div>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button asChild variant="ember">
+                <a href={MAPS_URRUCUI_URL} target="_blank" rel="noopener noreferrer">Como chegar — Uruçuí - PI</a>
+              </Button>
             </div>
           </div>
 
@@ -671,15 +704,23 @@ function Home() {
           <div>
             <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-4">Contato</div>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Pires do Rio - GO</li>
-              <li>CEP 75200-000</li>
+              <li>Pires do Rio - GO · CEP 75200-000</li>
+              <li><a href={MAPS_URRUCUI_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">{URUCUI_LABEL}</a></li>
               <li><a href="https://wa.me/5564992253474" className="hover:text-foreground">(64) 99225-3474</a></li>
-              <li><a href="https://instagram.com" className="hover:text-foreground">Instagram</a></li>
+              <li><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Instagram @atr_metal</a></li>
             </ul>
           </div>
         </div>
+        <div className="mx-auto max-w-7xl px-6 pb-10">
+          <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-4">Serviços</div>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            {seoServices.map((s) => (
+              <li key={s.slug}><Link to="/servicos/$slug" params={{ slug: s.slug }} className="text-muted-foreground hover:text-foreground">{s.name}</Link></li>
+            ))}
+          </ul>
+        </div>
         <div className="border-t border-border/60 py-6 px-6 text-center font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          © {new Date().getFullYear()} ATR Metal Indústria Metalúrgica · Forged in Goiás
+          © {new Date().getFullYear()} ATR METAL · Forged in Goiás
         </div>
       </footer>
 

@@ -42,7 +42,9 @@ export const Route = createFileRoute("/placas-personalizadas")({
       { property: "og:type", content: "product" },
       { name: "twitter:card", content: "summary_large_image" },
       ...(heroImg.startsWith("https://") ? [{ property: "og:image", content: heroImg }, { name: "twitter:image", content: heroImg }] : []),
+      { property: "og:url", content: "/placas-personalizadas" },
     ],
+    links: [{ rel: "canonical", href: "/placas-personalizadas" }],
     scripts: [
       {
         type: "application/ld+json",
