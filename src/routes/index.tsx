@@ -29,8 +29,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "ATR Metal — Power to Produce" },
       { property: "og:description", content: "Metalúrgica industrial pesada em Pires do Rio - GO. Fabricação, manutenção e montagem para sementeiras, caldeiras, cooperativas e armazéns." },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: heroImg },
-      { name: "twitter:image", content: heroImg },
+      ...(heroImg.startsWith("https://") ? [{ property: "og:image", content: heroImg }, { name: "twitter:image", content: heroImg }] : []),
       { name: "twitter:card", content: "summary_large_image" },
     ],
     scripts: [{
