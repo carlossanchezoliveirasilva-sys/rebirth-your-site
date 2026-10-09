@@ -148,7 +148,7 @@ function ServicePage() {
             <h2 className="font-display text-3xl uppercase mb-8">Serviços relacionados</h2>
             <div className="grid sm:grid-cols-3 gap-4">
               {related.map((r) => (
-                <Link key={r.slug} to={r.slug === "implementos-agricolas" ? "/implementos-agricolas" : "/servicos/$slug"} params={r.slug === "implementos-agricolas" ? undefined : { slug: r.slug }} className="border border-border/60 p-6 hover:border-primary transition-colors">
+                <Link key={r.slug} to="/servicos/$slug" params={{ slug: r.slug }} className="border border-border/60 p-6 hover:border-primary transition-colors">
                   <span className="font-display text-xl uppercase">{r.name}</span>
                   <span className="block mt-3 text-xs font-mono uppercase tracking-widest text-primary">Ver serviço →</span>
                 </Link>
