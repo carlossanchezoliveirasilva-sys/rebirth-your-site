@@ -395,9 +395,8 @@ function PlacasPage() {
               Orçamento
             </a>
           </nav>
-          <Button asChild variant="bare"><a
+          <Button asChild variant="ember" className="hidden md:inline-flex px-5 py-2.5 text-xs font-bold uppercase"><a
             href="#orcamento"
-            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 btn-ember text-xs font-bold uppercase tracking-widest"
           >
             Orçamento <span aria-hidden>→</span>
           </a></Button>
