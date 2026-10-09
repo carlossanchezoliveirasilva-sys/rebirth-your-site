@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PlacasPersonalizadasRouteImport } from './routes/placas-personalizadas'
+import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +23,40 @@ const PlacasPersonalizadasRoute = PlacasPersonalizadasRouteImport.update({
   path: '/placas-personalizadas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicosSlugRoute = ServicosSlugRouteImport.update({
+  id: '/servicos/$slug',
+  path: '/servicos/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
+  '/servicos/$slug': typeof ServicosSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
+  '/servicos/$slug': typeof ServicosSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
+  '/servicos/$slug': typeof ServicosSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/placas-personalizadas'
+  fullPaths: '/' | '/placas-personalizadas' | '/servicos/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/placas-personalizadas'
-  id: '__root__' | '/' | '/placas-personalizadas'
+  to: '/' | '/placas-personalizadas' | '/servicos/$slug'
+  id: '__root__' | '/' | '/placas-personalizadas' | '/servicos/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PlacasPersonalizadasRoute: typeof PlacasPersonalizadasRoute
+  ServicosSlugRoute: typeof ServicosSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlacasPersonalizadasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/servicos/$slug': {
+      id: '/servicos/$slug'
+      path: '/servicos/$slug'
+      fullPath: '/servicos/$slug'
+      preLoaderRoute: typeof ServicosSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PlacasPersonalizadasRoute: PlacasPersonalizadasRoute,
+  ServicosSlugRoute: ServicosSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
