@@ -20,10 +20,10 @@ import { Sparks } from "@/components/Sparks";
 import { Counter } from "@/components/Counter";
 import logoAtrAsset from "@/assets/logo-atr.svg.asset.json";
 const logoAtr = logoAtrAsset.url;
-import { services as seoServices, INSTAGRAM_URL, MAPS_URRUCUI_URL, URUCUI_LABEL, SITE_URL } from "@/lib/services";
+import { services as seoServices, servicesByCategory, INSTAGRAM_URL, MAPS_URRUCUI_URL, ADDRESS, ADDRESS_LINE, SITE_URL } from "@/lib/services";
 
-const homeTitle = "ATR METAL | Metalurgia, Usinagem e Manutenção Industrial";
-const homeDesc = "Calandragem, dobra, corte CNC plasma, oxicorte, usinagem, solda, locação de munck, implementos agrícolas e manutenção industrial. Unidades em Pires do Rio - GO e Uruçuí - PI.";
+const homeTitle = "ATR METAL | Metalurgia e Serviços Industriais em Uruçuí - PI";
+const homeDesc = "Metalurgia em Uruçuí - PI: corte CNC plasma, oxicorte, dobra e calandragem, tornearia, galpões metálicos, implementos agrícolas, Redler, elevadores de canecas e manutenção de secadores. Centro-Oeste e MATOPIBA.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,13 +52,14 @@ export const Route = createFileRoute("/")({
         sameAs: [INSTAGRAM_URL],
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Av. Priscila Maria de Lima Oliveira, Qd. 13A, Lt.22, Sala 02 - Jardim Goiás II",
-          addressLocality: "Pires do Rio",
-          addressRegion: "GO",
-          postalCode: "75200-000",
+          streetAddress: `${ADDRESS.street}, ${ADDRESS.district}`,
+          addressLocality: ADDRESS.city,
+          addressRegion: ADDRESS.state,
+          postalCode: "64860-000",
           addressCountry: "BR",
         },
-        areaServed: ["Goiás", "Piauí"],
+        areaServed: ["Região Centro-Oeste", "MATOPIBA"],
+        hasMap: MAPS_URRUCUI_URL,
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Serviços",
@@ -71,15 +72,15 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { t: "Caldeiraria Pesada", d: "Tanques, vasos de pressão e equipamentos sob medida em aço carbono e inox.", i: "M3 7l9-4 9 4-9 4-9-4zm0 6l9 4 9-4M3 17l9 4 9-4" },
-  { t: "Corte CNC & Plasma", d: "Precisão milimétrica em chapas grossas com tecnologia plasma de alta definição.", i: "M4 4h16v16H4zM9 9l6 6M15 9l-6 6" },
-  { t: "Calandra & Dobra", d: "Curvas perfeitas e dobras complexas para qualquer projeto industrial.", i: "M3 12c4-8 14-8 18 0M3 12c4 8 14 8 18 0" },
-  { t: "Solda Especializada", d: "Equipe certificada em MIG, TIG, eletrodo e processos industriais.", i: "M13 2L3 14h7l-1 8 11-14h-7l1-6z" },
-  { t: "Estruturas Metálicas", d: "Galpões, mezaninos, passarelas e estruturas para grandes vãos.", i: "M2 22V8l10-6 10 6v14M2 22h20M9 22V12h6v10" },
-  { t: "Montagem Industrial", d: "Equipe técnica completa para montagem de plantas industriais e agroindustriais.", i: "M12 2v6l4 4-4 4v6M4 12h16" },
-  { t: "Manutenção Industrial", d: "Paradas programadas, manutenção preventiva e corretiva 24/7.", i: "M14 6l-1 1 4 4 1-1a3 3 0 00-4-4zM4 20l8-8M4 20h4l8-8" },
-  { t: "Munck & Içamento", d: "Caminhão Munck para transporte e montagem de equipamentos pesados.", i: "M3 17h13l-2-8h-9zM16 9l4 4v4h-4M6 21a2 2 0 100-4 2 2 0 000 4zM18 21a2 2 0 100-4 2 2 0 000 4z" },
-  { t: "Trocadores & Tubulação", d: "Trocadores de calor, sistemas térmicos e tubulação industrial.", i: "M4 6h16M4 12h16M4 18h16M8 4v16M16 4v16" },
+  { t: "Corte e conformação", d: "Corte CNC plasma até 2\" (conforme condições técnicas), oxicorte até 200 mm, dobra até 1/4\" x 3.000 mm e calandragem.", i: "M4 4h16v16H4zM9 9l6 6M15 9l-6 6", slug: "corte-cnc-plasma" },
+  { t: "Usinagem e fabricação", d: "Tornearia, peças usinadas, roscas helicoidais e componentes industriais sob medida.", i: "M3 12c4-8 14-8 18 0M3 12c4 8 14 8 18 0", slug: "torno-e-usinagem" },
+  { t: "Galpões e estruturas", d: "Fabricação de galpões e estruturas metálicas, telhamento e soldagem de estruturas.", i: "M2 22V8l10-6 10 6v14M2 22h20M9 22V12h6v10", slug: "galpoes-e-estruturas-metalicas" },
+  { t: "Implementos agrícolas", d: "Implementos e soluções metálicas sob medida para o setor agropecuário.", i: "M3 17h13l-2-8h-9zM6 21a2 2 0 100-4 2 2 0 000 4zM18 21a2 2 0 100-4 2 2 0 000 4z", slug: "implementos-agricolas" },
+  { t: "Elevadores de canecas", d: "Fabricação de elevadores de canecas, cabeças de elevadores e componentes relacionados.", i: "M12 2v20M7 6h10M7 12h10M7 18h10", slug: "elevadores-de-canecas" },
+  { t: "Redler e roscas", d: "Sistemas Redler e roscas helicoidais para transporte de materiais a granel.", i: "M4 6h16M4 12h16M4 18h16M8 4v16M16 4v16", slug: "redler" },
+  { t: "Manutenção de secadores", d: "Manutenção de secadores, secadores rotativos e elevadores de canecas.", i: "M14 6l-1 1 4 4 1-1a3 3 0 00-4-4zM4 20l8-8M4 20h4l8-8", slug: "manutencao-de-secadores" },
+  { t: "Projetos sob medida", d: "Peças, estruturas e equipamentos conforme desenho, amostra ou especificação do cliente.", i: "M3 7l9-4 9 4-9 4-9-4zm0 6l9 4 9-4M3 17l9 4 9-4", slug: "projetos-sob-medida" },
+  { t: "Munck e serviços complementares", d: "Locação de caminhão munck, reforma de carrocerias e soldagem em chassis de caminhão.", i: "M13 2L3 14h7l-1 8 11-14h-7l1-6z", slug: "locacao-de-munck" },
 ];
 
 const industries = [
@@ -107,12 +108,12 @@ const reviews = [
 ];
 
 const differentials = [
-  { t: "Precisão", d: "Tolerâncias controladas em todo o processo de fabricação." },
-  { t: "Velocidade", d: "Atendimento rápido e prazos cumpridos com rigor." },
-  { t: "Engenharia", d: "Projetos sob medida pensados para a sua operação." },
+  { t: "Sob medida", d: "Soluções conforme desenho, amostra ou especificação do cliente." },
+  { t: "Comunicação clara", d: "Avaliação técnica de cada demanda antes do orçamento." },
+  { t: "Processos completos", d: "Corte, dobra, calandragem, usinagem e soldagem." },
   { t: "Estrutura", d: "Parque industrial completo de corte, dobra e solda." },
-  { t: "Tecnologia", d: "CNC e plasma de alta definição para acabamento premium." },
-  { t: "Experiência", d: "Anos atendendo o agronegócio e indústria pesada do Centro-Oeste." },
+  { t: "Capacidade", d: "Plasma até 2\", oxicorte até 200 mm e dobra até 1/4\" x 3.000 mm." },
+  { t: "Região", d: "Atendimento no Centro-Oeste e no MATOPIBA, conforme a logística." },
 ];
 
 function Home() {
@@ -244,7 +245,7 @@ function Home() {
         {/* Side label */}
         <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden lg:block">
           <div className="font-mono text-[10px] uppercase tracking-[0.4em] text-muted-foreground rotate-180 vertical-label" >
-            EST. PIRES DO RIO · GOIÁS · BR
+            URUÇUÍ · PIAUÍ · BR
           </div>
         </div>
         <div className="absolute right-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-3">
@@ -333,13 +334,16 @@ function Home() {
           </div>
           <div className="lg:col-span-7 lg:pt-10 space-y-6 text-lg text-muted-foreground" data-reveal>
             <p>
-              A <span className="text-foreground font-semibold">ATR METAL</span> é uma indústria metalúrgica pesada sediada em Pires do Rio - GO, especializada em fabricação, montagem e manutenção de equipamentos e estruturas industriais.
+              A <span className="text-foreground font-semibold">ATR METAL</span> é uma empresa especializada em soluções de metalurgia, fabricação de componentes metálicos, usinagem, soldagem e manutenção industrial e agroindustrial. Com sede em Uruçuí, Piauí, atendemos clientes dos setores industrial, agrícola e agroindustrial, desenvolvendo soluções sob medida para cada projeto.
             </p>
             <p>
-              Atendemos sementeiras, cooperativas, agroindústrias, caldeiras a biomassa e plantas industriais com soluções sob medida — do projeto à montagem em campo. Combinamos parque fabril completo, equipe técnica especializada e tecnologia de corte CNC plasma para entregar precisão, prazo e durabilidade.
+              Nosso portfólio abrange corte CNC plasma, oxicorte, dobra e calandragem de chapas, tornearia e usinagem, fabricação de estruturas metálicas e galpões, telhamento, soldagem, implementos agrícolas e projetos personalizados. Também fabricamos roscas helicoidais, sistemas Redler, cabeças e elevadores de canecas, e fazemos manutenção em secadores, elevadores de canecas e secadores rotativos.
+            </p>
+            <p>
+              Complementamos nossa atuação com manutenção industrial e agroindustrial, locação de caminhão munck, reforma de carrocerias e soldagem em chassis, conforme avaliação técnica. Realizamos serviços em toda a região Centro-Oeste e no MATOPIBA, conforme o tipo de serviço, a logística e a viabilidade de cada projeto.
             </p>
             <div className="grid grid-cols-2 gap-4 pt-6">
-              {["Engenharia própria", "Equipe certificada", "CNC de alta definição", "Atendimento em todo Brasil"].map((f) => (
+              {["Fabricação sob medida", "Indústria e agroindústria", "Corte, dobra e usinagem", "Centro-Oeste e MATOPIBA"].map((f) => (
                 <div key={f} className="flex items-center gap-3 border-l-2 border-primary pl-4 py-2">
                   <span className="text-foreground font-semibold">{f}</span>
                 </div>
@@ -364,7 +368,7 @@ function Home() {
               </h2>
             </div>
             <p className="max-w-md text-muted-foreground">
-              Soluções industriais completas — do corte da chapa à montagem da planta, com engenharia e tecnologia de alta performance.
+              Soluções de metalurgia, fabricação sob medida e manutenção para os setores industrial, agrícola e agroindustrial.
             </p>
           </div>
 
@@ -391,24 +395,38 @@ function Home() {
                 </div>
                 <h3 className="font-display text-2xl uppercase mb-3">{s.t}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{s.d}</p>
-                <div className="mt-8 pt-6 border-t border-border/60 flex items-center justify-between text-xs font-mono uppercase tracking-widest text-muted-foreground group-hover:text-primary transition-colors">
+                <Link to="/servicos/$slug" params={{ slug: s.slug }} className="mt-8 pt-6 border-t border-border/60 flex items-center justify-between text-xs font-mono uppercase tracking-widest text-muted-foreground group-hover:text-primary transition-colors">
                   Saiba mais
                   <span aria-hidden>→</span>
-                </div>
+                </Link>
               </article>
             ))}
           </div>
           <div className="mt-16">
-            <h3 className="font-display text-2xl uppercase mb-6">Todos os nossos serviços</h3>
-            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {seoServices.map((s) => (
-                <li key={s.slug}>
-                  <Link to="/servicos/$slug" params={{ slug: s.slug }} className="flex items-center justify-between border border-border/60 px-5 py-4 hover:border-primary hover:text-primary transition-colors">
-                    {s.name}<span aria-hidden>→</span>
-                  </Link>
-                </li>
+            <h3 className="font-display text-2xl uppercase mb-8">Catálogo completo de serviços</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {servicesByCategory().map(({ category, items }) => (
+                <div key={category}>
+                  <h4 className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4">{category}</h4>
+                  <ul className="space-y-2">
+                    {items.map((s) => (
+                      <li key={s.slug}>
+                        <Link to="/servicos/$slug" params={{ slug: s.slug }} className="flex items-center justify-between gap-3 border border-border/60 px-4 py-3 hover:border-primary hover:text-primary transition-colors">
+                          <span>{s.name}{s.capacity && <span className="block text-xs text-muted-foreground mt-1">{s.capacity}</span>}</span><span aria-hidden>→</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
+            <div className="mt-16 border border-primary/40 p-8 md:flex md:items-center md:justify-between gap-6">
+              <div>
+                <h3 className="font-display text-2xl uppercase">Tem um projeto específico?</h3>
+                <p className="mt-2 text-muted-foreground max-w-2xl">Solicite um orçamento e apresente sua necessidade à nossa equipe. Envie desenhos, medidas ou amostras para avaliarmos a viabilidade de fabricação.</p>
+              </div>
+              <Button asChild variant="ember" className="mt-6 md:mt-0 shrink-0"><a href="#contato">Solicitar orçamento</a></Button>
+            </div>
           </div>
         </div>
       </section>
@@ -569,8 +587,9 @@ function Home() {
             <div className="mt-10 space-y-5">
               {[
                 { l: "WhatsApp / Telefone", v: "(64) 99225-3474", h: "https://wa.me/5564992253474" },
-                { l: "Unidade Pires do Rio - GO", v: "Av. Priscila Maria de Lima Oliveira, Qd. 13A, Lt.22 — Jardim Goiás II, Pires do Rio - GO, 75200-000" },
-                { l: "Unidade Uruçuí - PI", v: URUCUI_LABEL },
+                { l: "Endereço", v: ADDRESS_LINE },
+                { l: "Ponto de referência", v: ADDRESS.reference },
+                { l: "Área de atendimento", v: "Centro-Oeste e MATOPIBA, conforme o serviço e a logística" },
                 { l: "Instagram", v: "@atr_metal", h: INSTAGRAM_URL },
               ].map((c) => (
                 <div key={c.l} className="border-l-2 border-primary pl-5">
@@ -586,15 +605,15 @@ function Home() {
 
             <div className="mt-10 aspect-[16/9] overflow-hidden border border-border/60 relative">
               <iframe
-                title="Localização ATR METAL em Pires do Rio - GO"
-                src="https://www.google.com/maps?q=Pires+do+Rio+GO+Jardim+Goias+II&output=embed"
+                title="Localização ATR METAL em Uruçuí - PI"
+                src="https://www.google.com/maps?q=Portal+dos+Cerrados+Uru%C3%A7u%C3%AD+PI&output=embed"
                 className="absolute inset-0 h-full w-full grayscale contrast-125"
                 loading="lazy"
               />
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button asChild variant="ember">
-                <a href={MAPS_URRUCUI_URL} target="_blank" rel="noopener noreferrer">Como chegar — Uruçuí - PI</a>
+                <a href={MAPS_URRUCUI_URL} target="_blank" rel="noopener noreferrer">Como chegar</a>
               </Button>
             </div>
           </div>
@@ -690,7 +709,7 @@ function Home() {
               <img src={logoAtr} alt="ATR METAL Indústria Metalúrgica" className="h-12 w-auto" />
             </div>
             <p className="text-muted-foreground max-w-md">
-              Engenharia em aço. Potência em produção. Fabricação e montagem industrial pesada para o agronegócio e indústria do Centro-Oeste.
+              Metalurgia, fabricação sob medida e manutenção industrial e agroindustrial. Sede em Uruçuí - PI, atendendo o Centro-Oeste e o MATOPIBA.
             </p>
           </div>
           <div>
@@ -704,8 +723,9 @@ function Home() {
           <div>
             <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-4">Contato</div>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Pires do Rio - GO · CEP 75200-000</li>
-              <li><a href={MAPS_URRUCUI_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">{URUCUI_LABEL}</a></li>
+              <li>{ADDRESS.street}</li>
+              <li>{ADDRESS.district} · {ADDRESS.city} - {ADDRESS.state} · CEP {ADDRESS.cep}</li>
+              <li><a href={MAPS_URRUCUI_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Como chegar</a></li>
               <li><a href="https://wa.me/5564992253474" className="hover:text-foreground">(64) 99225-3474</a></li>
               <li><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Instagram @atr_metal</a></li>
             </ul>
@@ -720,7 +740,7 @@ function Home() {
           </ul>
         </div>
         <div className="border-t border-border/60 py-6 px-6 text-center font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          © {new Date().getFullYear()} ATR METAL · Pires do Rio - GO
+          © {new Date().getFullYear()} ATR METAL · Uruçuí - PI
         </div>
       </footer>
 
