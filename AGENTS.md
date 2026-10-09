@@ -16,3 +16,4 @@
 - Keep quote requests as WhatsApp and email handoffs, with reference images attached manually in WhatsApp; the source has no database or automatic email delivery.
 - Keep plate pricing in a browser-safe calculation module with regression tests so original estimates remain consistent.
 - Service pages are data-driven from src/lib/services.ts via /servicos/$slug; keep public/sitemap.xml in sync when services change.
+- Agricultural implements use the dedicated catalog route /implementos-agricolas; /servicos/implementos-agricolas and its legacy slugs redirect there so old links keep working.
