@@ -3,8 +3,8 @@
     "capability": "code",
     "source": "TanStack React 19 archive",
     "outcome": "recreate",
-    "status": "in_progress",
-    "next_action": "Copy inspected pages and components into target starter"
+    "status": "verified",
+    "next_action": ""
   },
   {
     "capability": "schema",
@@ -17,8 +17,8 @@
     "capability": "records",
     "source": "Static source content",
     "outcome": "preserve",
-    "status": "in_progress",
-    "next_action": "Preserve arrays and copy"
+    "status": "verified",
+    "next_action": ""
   },
   {
     "capability": "auth identities",
@@ -38,22 +38,22 @@
     "capability": "uploaded file bytes",
     "source": "Bundled images and logo",
     "outcome": "preserve",
-    "status": "in_progress",
-    "next_action": "Upload source media to asset service"
+    "status": "verified",
+    "next_action": ""
   },
   {
     "capability": "external providers",
     "source": "WhatsApp, mailto, Google Maps, Instagram",
     "outcome": "preserve",
-    "status": "pending",
-    "next_action": "Verify links; source Instagram points to homepage"
+    "status": "partially_verified",
+    "next_action": "User must supply actual Instagram profile URL; WhatsApp/mailto handoffs verified without sending, delivery depends on user apps. Maps iframe preserved."
   },
   {
     "capability": "public endpoints",
     "source": "/ and /placas-personalizadas",
     "outcome": "preserve",
-    "status": "pending",
-    "next_action": "Verify both pages"
+    "status": "verified",
+    "next_action": ""
   },
   {
     "capability": "callbacks",
@@ -94,7 +94,7 @@
     "capability": "verification",
     "source": "Calculator, lightbox, menus and quote forms",
     "outcome": "preserve",
-    "status": "pending",
-    "next_action": "Exercise browser interactions"
+    "status": "verified",
+    "next_action": ""
   }
 ]

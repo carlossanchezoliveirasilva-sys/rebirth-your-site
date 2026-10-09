@@ -1,3 +1,3 @@
-- [ ] Recreate both ATR Metal pages with original photos and styling.
-- [ ] Preserve and verify calculator, gallery, menus, and quote handoffs.
-- [ ] Report any original external-link limitation.
+- [x] Recreate both ATR Metal pages with original photos and styling.
+- [x] Preserve and verify calculator, gallery, menus, and quote handoffs.
+- [x] Report original external-link limitation: Instagram profile URL is absent; quote delivery remains a handoff to WhatsApp and the user's email app.
