@@ -1,9 +1,9 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import {
-  BRAND, INSTAGRAM_URL, MAPS_URRUCUI_URL, PHONE_DISPLAY, PHONE_E164, PIRES_ADDRESS, SITE_URL, URUCUI_LABEL,
-  getService, services, whatsappLink, type ImageKey,
+  BRAND, INSTAGRAM_URL, MAPS_URRUCUI_URL, PHONE_DISPLAY, PHONE_E164, ADDRESS, ADDRESS_LINE, SERVICE_AREA, SITE_URL,
+  getService, legacySlugs, services, whatsappLink, type ImageKey,
 } from "@/lib/services";
 import calandra from "@/assets/calandra.jpg.asset.json";
 import cnc from "@/assets/cnc-plasma.jpg.asset.json";
@@ -21,6 +21,8 @@ const images: Record<ImageKey, string> = {
 
 export const Route = createFileRoute("/servicos/$slug")({
   loader: ({ params }) => {
+    const moved = legacySlugs[params.slug];
+    if (moved) throw redirect({ to: "/servicos/$slug", params: { slug: moved }, statusCode: 301 });
     const service = getService(params.slug);
     if (!service) throw notFound();
     return { service };
@@ -52,6 +54,8 @@ export const Route = createFileRoute("/servicos/$slug")({
             description: s.description,
             url: `${SITE_URL}${path}`,
             provider: { "@type": "LocalBusiness", name: BRAND, url: SITE_URL, telephone: PHONE_E164 },
+            category: s.category,
+            areaServed: ["Centro-Oeste", "MATOPIBA"],
           }),
         },
         {
@@ -100,6 +104,11 @@ function ServicePage() {
             </nav>
             <h1 className="text-display font-display uppercase max-w-4xl">{s.h1}</h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-2xl">{s.intro}</p>
+            {s.capacity && (
+              <p className="mt-6 inline-block border-l-2 border-primary pl-4 font-mono text-sm uppercase tracking-widest">
+                Capacidade: <span className="text-primary">{s.capacity}</span>
+              </p>
+            )}
             <div className="mt-10">
               <Button asChild variant="ember" size="lg">
                 <a href={wa} target="_blank" rel="noopener noreferrer">Solicitar orçamento pelo WhatsApp</a>
@@ -122,8 +131,10 @@ function ServicePage() {
             <p className="text-muted-foreground leading-relaxed">{s.solves}</p>
             <h3 className="font-display text-xl uppercase mt-10 mb-3">Atendimento</h3>
             <ul className="text-sm text-muted-foreground space-y-2">
-              <li>Pires do Rio - GO: {PIRES_ADDRESS}</li>
-              <li>{URUCUI_LABEL} — <a href={MAPS_URRUCUI_URL} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Ver localização no Google Maps</a></li>
+              <li>{ADDRESS_LINE}</li>
+              <li>Referência: {ADDRESS.reference}</li>
+              <li><a href={MAPS_URRUCUI_URL} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Como chegar</a></li>
+              <li>Área de atendimento: {SERVICE_AREA}, conforme o tipo de serviço e a logística.</li>
               <li>WhatsApp: <a href={wa} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">{PHONE_DISPLAY}</a></li>
               <li><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Instagram @atr_metal</a></li>
             </ul>

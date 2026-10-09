@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "ATR METAL | Metalurgia e Serviços Industriais" },
-      { name: "description", content: "ATR METAL: fabricação, montagem e manutenção industrial em Pires do Rio, Goiás." },
+      { name: "description", content: "ATR METAL: metalurgia, fabricação sob medida e manutenção industrial e agroindustrial em Uruçuí - PI." },
       { name: "author", content: "ATR METAL" },
       { property: "og:title", content: "ATR METAL | Metalurgia e Serviços Industriais" },
       { property: "og:description", content: "Engenharia em aço. Potência em produção." },
