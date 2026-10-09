@@ -22,6 +22,7 @@ const images: Record<ImageKey, string> = {
 export const Route = createFileRoute("/servicos/$slug")({
   loader: ({ params }) => {
     const moved = legacySlugs[params.slug];
+    if (moved === "implementos-agricolas" || params.slug === "implementos-agricolas") throw redirect({ to: "/implementos-agricolas", statusCode: 301 });
     if (moved) throw redirect({ to: "/servicos/$slug", params: { slug: moved }, statusCode: 301 });
     const service = getService(params.slug);
     if (!service) throw notFound();
@@ -89,6 +90,7 @@ function ServicePage() {
           </Link>
           <nav className="flex items-center gap-5 text-xs font-mono uppercase tracking-widest">
             <Link to="/" hash="servicos" className="text-muted-foreground hover:text-foreground">Serviços</Link>
+            <Link to="/implementos-agricolas" className="text-muted-foreground hover:text-foreground hidden sm:inline">Implementos</Link>
             <Link to="/" hash="contato" className="text-muted-foreground hover:text-foreground">Contato</Link>
           </nav>
         </div>

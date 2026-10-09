@@ -9,8 +9,8 @@ import structureImgAsset from "@/assets/structure.jpg.asset.json";
 const structureImg = structureImgAsset.url;
 import agroImgAsset from "@/assets/agro.jpg.asset.json";
 const agroImg = agroImgAsset.url;
-import boilerImgAsset from "@/assets/boiler.jpg.asset.json";
-const boilerImg = boilerImgAsset.url;
+import roloFacaAsset from "@/assets/impl-rolo-faca.jpg.asset.json";
+const roloFacaImg = roloFacaAsset.url;
 import conveyorImgAsset from "@/assets/conveyor.jpg.asset.json";
 const conveyorImg = conveyorImgAsset.url;
 import calandraImgAsset from "@/assets/calandra.jpg.asset.json";
@@ -87,14 +87,14 @@ const industries = [
   { t: "Agroindustrial", img: agroImg },
   { t: "Sementeiras", img: agroImg },
   { t: "Cooperativas", img: structureImg },
-  { t: "Caldeiras & Térmicas", img: boilerImg },
+  { t: "Implementos Agrícolas", img: roloFacaImg },
   { t: "Fábricas & Usinas", img: conveyorImg },
   { t: "Armazéns de Grãos", img: agroImg },
 ];
 
 const projects = [
   { t: "Silos & Transporte", c: "Agroindustrial", img: agroImg, w: "lg:col-span-2 lg:row-span-2" },
-  { t: "Caldeira a Biomassa", c: "Energia", img: boilerImg, w: "" },
+  { t: "Implementos Agrícolas", c: "Agro", img: roloFacaImg, w: "" },
   { t: "Estrutura 40m", c: "Indústria Pesada", img: structureImg, w: "" },
   { t: "Linha de Conveyors", c: "Logística", img: conveyorImg, w: "lg:col-span-2" },
   { t: "Calandra 3/4\"", c: "Caldeiraria", img: calandraImg, w: "" },
@@ -163,6 +163,10 @@ function Home() {
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all group-hover:w-full" />
               </a>
             ))}
+            <Link to="/implementos-agricolas" className="text-muted-foreground hover:text-foreground transition-colors relative group">
+              Implementos Agrícolas
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all group-hover:w-full" />
+            </Link>
             <Link to="/placas-personalizadas" className="text-primary hover:text-foreground transition-colors relative group">
               Placas Corten
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all group-hover:w-full" />
@@ -188,7 +192,7 @@ function Home() {
         </div>
 
         {/* Mobile menu */}
-        <div className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ${menuOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"}`}>
+        <div className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ${menuOpen ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0"}`}>
           <nav className="mx-auto max-w-7xl px-4 pt-4 pb-6 flex flex-col gap-1 border-t border-border/40 mt-3">
             {[
               ["Sobre", "#sobre"],
@@ -207,6 +211,14 @@ function Home() {
                 <span aria-hidden className="text-primary">→</span>
               </a>
             ))}
+            <Link
+              to="/implementos-agricolas"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center justify-between py-3 font-display text-lg uppercase tracking-wide text-foreground border-b border-border/40"
+            >
+              Implementos Agrícolas
+              <span aria-hidden className="text-primary">→</span>
+            </Link>
             <Link
               to="/placas-personalizadas"
               onClick={() => setMenuOpen(false)}
