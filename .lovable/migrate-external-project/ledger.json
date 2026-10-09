@@ -1,0 +1,100 @@
+[
+  {
+    "capability": "code",
+    "source": "TanStack React 19 archive",
+    "outcome": "recreate",
+    "status": "in_progress",
+    "next_action": "Copy inspected pages and components into target starter"
+  },
+  {
+    "capability": "schema",
+    "source": "No store in source",
+    "outcome": "not_applicable",
+    "status": "verified",
+    "next_action": ""
+  },
+  {
+    "capability": "records",
+    "source": "Static source content",
+    "outcome": "preserve",
+    "status": "in_progress",
+    "next_action": "Preserve arrays and copy"
+  },
+  {
+    "capability": "auth identities",
+    "source": "No auth in source",
+    "outcome": "not_applicable",
+    "status": "verified",
+    "next_action": ""
+  },
+  {
+    "capability": "authorization",
+    "source": "Public static site",
+    "outcome": "not_applicable",
+    "status": "verified",
+    "next_action": ""
+  },
+  {
+    "capability": "uploaded file bytes",
+    "source": "Bundled images and logo",
+    "outcome": "preserve",
+    "status": "in_progress",
+    "next_action": "Upload source media to asset service"
+  },
+  {
+    "capability": "external providers",
+    "source": "WhatsApp, mailto, Google Maps, Instagram",
+    "outcome": "preserve",
+    "status": "pending",
+    "next_action": "Verify links; source Instagram points to homepage"
+  },
+  {
+    "capability": "public endpoints",
+    "source": "/ and /placas-personalizadas",
+    "outcome": "preserve",
+    "status": "pending",
+    "next_action": "Verify both pages"
+  },
+  {
+    "capability": "callbacks",
+    "source": "None",
+    "outcome": "not_applicable",
+    "status": "verified",
+    "next_action": ""
+  },
+  {
+    "capability": "webhooks",
+    "source": "None",
+    "outcome": "not_applicable",
+    "status": "verified",
+    "next_action": ""
+  },
+  {
+    "capability": "schedules",
+    "source": "None",
+    "outcome": "not_applicable",
+    "status": "verified",
+    "next_action": ""
+  },
+  {
+    "capability": "secrets",
+    "source": "None detected",
+    "outcome": "not_applicable",
+    "status": "verified",
+    "next_action": ""
+  },
+  {
+    "capability": "cutover",
+    "source": "Not published",
+    "outcome": "pending",
+    "status": "pending",
+    "next_action": "Publish when requested"
+  },
+  {
+    "capability": "verification",
+    "source": "Calculator, lightbox, menus and quote forms",
+    "outcome": "preserve",
+    "status": "pending",
+    "next_action": "Exercise browser interactions"
+  }
+]
