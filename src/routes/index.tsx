@@ -44,7 +44,7 @@ export const Route = createFileRoute("/")({
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         name: "ATR METAL",
-        alternateName: ["ATR Metal Indústria Metalúrgica", "ATR Metal Forge"],
+        alternateName: ["ATR METAL Indústria Metalúrgica"],
         url: SITE_URL,
         logo: logoAtr.startsWith("https://") ? logoAtr : undefined,
         image: heroImg,
@@ -146,8 +146,8 @@ function Home() {
       {/* NAV */}
       <header className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${scrolled || menuOpen ? "glass-strong py-3" : "py-4 md:py-6"}`}>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 md:px-6 gap-4">
-          <a href="#top" onClick={() => setMenuOpen(false)} className="flex items-center gap-3 group shrink-0" aria-label="ATR Metal Indústria Metalúrgica">
-            <img src={logoAtr} alt="ATR Metal Indústria Metalúrgica" className="h-7 sm:h-8 md:h-10 w-auto" />
+          <a href="#top" onClick={() => setMenuOpen(false)} className="flex items-center gap-3 group shrink-0" aria-label="ATR METAL Indústria Metalúrgica">
+            <img src={logoAtr} alt="ATR METAL Indústria Metalúrgica" className="h-7 sm:h-8 md:h-10 w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
             {[
@@ -333,7 +333,7 @@ function Home() {
           </div>
           <div className="lg:col-span-7 lg:pt-10 space-y-6 text-lg text-muted-foreground" data-reveal>
             <p>
-              A <span className="text-foreground font-semibold">ATR Metal</span> é uma indústria metalúrgica pesada sediada em Pires do Rio - GO, especializada em fabricação, montagem e manutenção de equipamentos e estruturas industriais.
+              A <span className="text-foreground font-semibold">ATR METAL</span> é uma indústria metalúrgica pesada sediada em Pires do Rio - GO, especializada em fabricação, montagem e manutenção de equipamentos e estruturas industriais.
             </p>
             <p>
               Atendemos sementeiras, cooperativas, agroindústrias, caldeiras a biomassa e plantas industriais com soluções sob medida — do projeto à montagem em campo. Combinamos parque fabril completo, equipe técnica especializada e tecnologia de corte CNC plasma para entregar precisão, prazo e durabilidade.
@@ -612,7 +612,7 @@ function Home() {
               const msg = String(fd.get("msg") || "").trim();
 
               const linhas = [
-                "*Nova solicitação de orçamento — ATR Metal*",
+                "*Nova solicitação de orçamento — ATR METAL*",
                 "",
                 `*Nome:* ${nome}`,
                 `*Empresa:* ${empresa}`,
@@ -624,10 +624,10 @@ function Home() {
               ];
               const texto = linhas.join("\n");
               const corpoEmail = linhas.join("\n").replace(/\*/g, "");
-              const assunto = `Orçamento ATR Metal — ${nome}${empresa ? " / " + empresa : ""}`;
+              const assunto = `Orçamento ATR METAL — ${nome}${empresa ? " / " + empresa : ""}`;
 
               const wa = `https://wa.me/5564992253474?text=${encodeURIComponent(texto)}`;
-              const mail = `mailto:atr.metal.pdr@gmail.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpoEmail)}`;
+              const mail = `mailto:contato@atrmetal.com.br?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpoEmail)}`;
 
               // Abrir WhatsApp em nova aba
               window.open(wa, "_blank", "noopener,noreferrer");
@@ -687,7 +687,7 @@ function Home() {
         <div className="mx-auto max-w-7xl px-6 py-16 grid md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-5">
-              <img src={logoAtr} alt="ATR Metal Indústria Metalúrgica" className="h-12 w-auto" />
+              <img src={logoAtr} alt="ATR METAL Indústria Metalúrgica" className="h-12 w-auto" />
             </div>
             <p className="text-muted-foreground max-w-md">
               Engenharia em aço. Potência em produção. Fabricação e montagem industrial pesada para o agronegócio e indústria do Centro-Oeste.
@@ -720,7 +720,7 @@ function Home() {
           </ul>
         </div>
         <div className="border-t border-border/60 py-6 px-6 text-center font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          © {new Date().getFullYear()} ATR METAL · Forged in Goiás
+          © {new Date().getFullYear()} ATR METAL · Pires do Rio - GO
         </div>
       </footer>
 
