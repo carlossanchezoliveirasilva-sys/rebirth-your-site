@@ -9,6 +9,9 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        ember: "btn-ember rounded-none h-auto whitespace-normal",
+        steel: "btn-outline-steel rounded-none h-auto whitespace-normal",
+        bare: "rounded-none h-auto p-0 whitespace-normal",
         default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:

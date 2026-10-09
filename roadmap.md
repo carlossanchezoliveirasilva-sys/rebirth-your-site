@@ -1,0 +1,3 @@
+- [ ] Recreate both ATR Metal pages with original photos and styling.
+- [ ] Preserve and verify calculator, gallery, menus, and quote handoffs.
+- [ ] Report any original external-link limitation.
