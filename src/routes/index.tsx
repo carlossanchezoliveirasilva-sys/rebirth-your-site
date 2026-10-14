@@ -167,10 +167,6 @@ function Home() {
               Implementos Agrícolas
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all group-hover:w-full" />
             </Link>
-            <Link to="/placas-personalizadas" className="text-primary hover:text-foreground transition-colors relative group">
-              Placas Corten
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all group-hover:w-full" />
-            </Link>
           </nav>
           <Button asChild variant="ember" className="hidden md:inline-flex px-5 py-2.5 text-xs font-bold uppercase"><a href="#contato">
             Orçamento
@@ -217,14 +213,6 @@ function Home() {
               className="flex items-center justify-between py-3 font-display text-lg uppercase tracking-wide text-foreground border-b border-border/40"
             >
               Implementos Agrícolas
-              <span aria-hidden className="text-primary">→</span>
-            </Link>
-            <Link
-              to="/placas-personalizadas"
-              onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-between py-3 font-display text-lg uppercase tracking-wide text-primary border-b border-border/40"
-            >
-              Placas Corten
               <span aria-hidden className="text-primary">→</span>
             </Link>
             <Button asChild variant="bare"><a
