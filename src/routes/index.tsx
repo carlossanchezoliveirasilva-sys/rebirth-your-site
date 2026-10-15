@@ -308,10 +308,11 @@ function Home() {
 
       {/* MARQUEE */}
       <section className="border-y border-border/40 bg-card/40 overflow-hidden py-6">
-        <div className="flex animate-marquee whitespace-nowrap font-display text-4xl md:text-6xl text-muted-foreground/40 gap-12">
+        {/* Duration scaled to the longer word list so pixels/second is ~25% faster than the original 40s loop */}
+        <div className="flex w-max animate-marquee whitespace-nowrap font-display text-4xl md:text-6xl text-muted-foreground/40 gap-12" style={{ animationDuration: "62s" }}>
           {Array.from({ length: 2 }).map((_, idx) => (
-            <div key={idx} className="flex gap-12 items-center shrink-0">
-              {["CALDEIRARIA", "★", "CORTE CNC", "★", "PLASMA", "★", "CALANDRA", "★", "ESTRUTURAS", "★", "MUNCK", "★", "AGROINDÚSTRIA", "★", "MONTAGEM", "★"].map((w, i) => (
+            <div key={idx} aria-hidden={idx === 1} className="flex gap-12 items-center shrink-0">
+              {["CORTE CNC PLASMA", "★", "OXICORTE CNC", "★", "DOBRADEIRA 1/4\" × 3000 MM", "★", "GUILHOTINA", "★", "CORTE E DOBRA", "★", "CALANDRA", "★", "FABRICAÇÃO DE EQUIPAMENTOS", "★", "MONTAGEM", "★", "CALDEIRARIA", "★", "ESTRUTURAS", "★", "MUNCK", "★", "AGROINDÚSTRIA", "★"].map((w, i) => (
                 <span key={i} className={w === "★" ? "text-primary" : ""}>{w}</span>
               ))}
             </div>
