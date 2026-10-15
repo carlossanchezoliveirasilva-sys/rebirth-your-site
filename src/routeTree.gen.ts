@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CaldeirariaIndustrialRouteImport } from './routes/caldeiraria-industrial'
 import { Route as ImplementosAgricolasRouteImport } from './routes/implementos-agricolas'
 import { Route as PlacasPersonalizadasRouteImport } from './routes/placas-personalizadas'
 import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
@@ -17,6 +18,11 @@ import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaldeirariaIndustrialRoute = CaldeirariaIndustrialRouteImport.update({
+  id: '/caldeiraria-industrial',
+  path: '/caldeiraria-industrial',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImplementosAgricolasRoute = ImplementosAgricolasRouteImport.update({
@@ -37,12 +43,14 @@ const ServicosSlugRoute = ServicosSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/caldeiraria-industrial': typeof CaldeirariaIndustrialRoute
   '/implementos-agricolas': typeof ImplementosAgricolasRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
   '/servicos/$slug': typeof ServicosSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/caldeiraria-industrial': typeof CaldeirariaIndustrialRoute
   '/implementos-agricolas': typeof ImplementosAgricolasRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
   '/servicos/$slug': typeof ServicosSlugRoute
@@ -50,6 +58,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/caldeiraria-industrial': typeof CaldeirariaIndustrialRoute
   '/implementos-agricolas': typeof ImplementosAgricolasRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
   '/servicos/$slug': typeof ServicosSlugRoute
@@ -58,18 +67,21 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/caldeiraria-industrial'
     | '/implementos-agricolas'
     | '/placas-personalizadas'
     | '/servicos/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/caldeiraria-industrial'
     | '/implementos-agricolas'
     | '/placas-personalizadas'
     | '/servicos/$slug'
   id:
     | '__root__'
     | '/'
+    | '/caldeiraria-industrial'
     | '/implementos-agricolas'
     | '/placas-personalizadas'
     | '/servicos/$slug'
@@ -77,6 +89,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CaldeirariaIndustrialRoute: typeof CaldeirariaIndustrialRoute
   ImplementosAgricolasRoute: typeof ImplementosAgricolasRoute
   PlacasPersonalizadasRoute: typeof PlacasPersonalizadasRoute
   ServicosSlugRoute: typeof ServicosSlugRoute
@@ -89,6 +102,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/caldeiraria-industrial': {
+      id: '/caldeiraria-industrial'
+      path: '/caldeiraria-industrial'
+      fullPath: '/caldeiraria-industrial'
+      preLoaderRoute: typeof CaldeirariaIndustrialRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/implementos-agricolas': {
@@ -117,6 +137,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CaldeirariaIndustrialRoute: CaldeirariaIndustrialRoute,
   ImplementosAgricolasRoute: ImplementosAgricolasRoute,
   PlacasPersonalizadasRoute: PlacasPersonalizadasRoute,
   ServicosSlugRoute: ServicosSlugRoute,
