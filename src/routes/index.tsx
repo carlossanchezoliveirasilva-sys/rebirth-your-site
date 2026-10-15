@@ -63,7 +63,7 @@ export const Route = createFileRoute("/")({
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Serviços",
-          itemListElement: seoServices.map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s.name, url: `${SITE_URL}/servicos/${s.slug}` } })),
+          itemListElement: [...seoServices.map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s.name, url: `${SITE_URL}/servicos/${s.slug}` } })), { "@type": "Offer", itemOffered: { "@type": "Service", name: "Caldeiraria Industrial", url: `${SITE_URL}/caldeiraria-industrial` } }],
         },
       }),
     }],
@@ -150,7 +150,7 @@ function Home() {
           <a href="#top" onClick={() => setMenuOpen(false)} className="flex items-center gap-3 group shrink-0" aria-label="ATR METAL Indústria Metalúrgica">
             <img src={logoAtr} alt="ATR METAL Indústria Metalúrgica" className="h-7 sm:h-8 md:h-10 w-auto" />
           </a>
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+          <nav className="hidden xl:flex items-center gap-4 text-xs font-medium">
             {[
               ["Sobre", "#sobre"],
               ["Serviços", "#servicos"],
@@ -167,8 +167,12 @@ function Home() {
               Implementos Agrícolas
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all group-hover:w-full" />
             </Link>
+            <Link to="/caldeiraria-industrial" className="text-muted-foreground hover:text-foreground transition-colors relative group">
+              Caldeiraria Industrial
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all group-hover:w-full" />
+            </Link>
           </nav>
-          <Button asChild variant="ember" className="hidden md:inline-flex px-5 py-2.5 text-xs font-bold uppercase"><a href="#contato">
+          <Button asChild variant="ember" className="hidden xl:inline-flex px-5 py-2.5 text-xs font-bold uppercase"><a href="#contato">
             Orçamento
             <span aria-hidden>→</span>
           </a></Button>
@@ -177,7 +181,7 @@ function Home() {
             aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
-            className="md:hidden grid h-10 w-10 place-items-center border border-border/80 text-foreground"
+            className="xl:hidden grid h-10 w-10 place-items-center border border-border/80 text-foreground"
           >
             <span className="relative block h-3.5 w-5">
               <span className={`absolute left-0 top-0 h-px w-full bg-current transition-transform ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`} />
@@ -188,7 +192,7 @@ function Home() {
         </div>
 
         {/* Mobile menu */}
-        <div className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ${menuOpen ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0"}`}>
+        <div className={`xl:hidden overflow-hidden transition-[max-height,opacity] duration-300 ${menuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"}`}>
           <nav className="mx-auto max-w-7xl px-4 pt-4 pb-6 flex flex-col gap-1 border-t border-border/40 mt-3">
             {[
               ["Sobre", "#sobre"],
@@ -213,6 +217,10 @@ function Home() {
               className="flex items-center justify-between py-3 font-display text-lg uppercase tracking-wide text-foreground border-b border-border/40"
             >
               Implementos Agrícolas
+              <span aria-hidden className="text-primary">→</span>
+            </Link>
+            <Link to="/caldeiraria-industrial" onClick={() => setMenuOpen(false)} className="flex items-center justify-between py-3 font-display text-lg uppercase tracking-wide text-foreground border-b border-border/40">
+              Caldeiraria Industrial
               <span aria-hidden className="text-primary">→</span>
             </Link>
             <Button asChild variant="bare"><a
@@ -405,6 +413,10 @@ function Home() {
           </div>
           <div className="mt-16">
             <h3 className="font-display text-2xl uppercase mb-8">Catálogo completo de serviços</h3>
+            <Link to="/caldeiraria-industrial" className="mb-10 flex items-center justify-between gap-6 border-l-2 border-primary pl-6 py-3 hover:text-primary transition-colors">
+              <span><span className="block font-display text-2xl uppercase">Caldeiraria Industrial</span><span className="block mt-2 text-sm text-muted-foreground">Fabricação de equipamentos e estruturas industriais sob medida.</span></span>
+              <span aria-hidden>→</span>
+            </Link>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
               {servicesByCategory().map(({ category, items }) => (
                 <div key={category}>
@@ -738,6 +750,7 @@ function Home() {
             {seoServices.map((s) => (
               <li key={s.slug}><Link to="/servicos/$slug" params={{ slug: s.slug }} className="text-muted-foreground hover:text-foreground">{s.name}</Link></li>
             ))}
+            <li><Link to="/caldeiraria-industrial" className="text-muted-foreground hover:text-foreground">Caldeiraria Industrial</Link></li>
           </ul>
         </div>
         <div className="border-t border-border/60 py-6 px-6 text-center font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
