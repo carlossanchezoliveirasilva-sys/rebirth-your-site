@@ -17,4 +17,5 @@
 - Keep plate pricing in a browser-safe calculation module with regression tests so original estimates remain consistent.
 - Service pages are data-driven from src/lib/services.ts via /servicos/$slug; keep public/sitemap.xml in sync when services change.
 - Agricultural implements use the dedicated catalog route /implementos-agricolas; /servicos/implementos-agricolas and its legacy slugs redirect there so old links keep working.
+- Industrial fabrication uses the dedicated /caldeiraria-industrial content route, linked from the home navigation and catalog and included in the sitemap, to keep this offering distinct without renaming existing services.
 - /placas-personalizadas is temporarily retired: its route only issues a 301 to "/", and it stays out of navigation and the sitemap; plate assets and src/lib/plate-pricing.ts are kept so the page can be restored.
