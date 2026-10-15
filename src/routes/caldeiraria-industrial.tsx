@@ -11,7 +11,7 @@ const description = "Fabricação de equipamentos e estruturas industriais sob m
 const pageUrl = `${SITE_URL}/caldeiraria-industrial`;
 const equipment = [
   "Ventiladores e exaustores industriais", "Chaminés industriais", "Multiciclones", "Ciclones",
-  "Redlers para transporte a seco", "Roscas extratoras", "Esteiras alimentadoras",
+  "Redlers para transporte a seco", "Roscas extratoras",
   "Pipe racks (estruturas metálicas para suporte de tubulações)", "Plataformas industriais",
   "Escadas tipo marinheiro", "Guarda-corpos", "Corrimãos",
 ];
