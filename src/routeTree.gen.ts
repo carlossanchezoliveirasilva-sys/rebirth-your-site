@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as CaldeirariaIndustrialRouteImport } from './routes/caldeiraria-industrial'
 import { Route as ImplementosAgricolasRouteImport } from './routes/implementos-agricolas'
 import { Route as PlacasPersonalizadasRouteImport } from './routes/placas-personalizadas'
+import { Route as CaldeirariaIndustrialSlugRouteImport } from './routes/caldeiraria-industrial_.$slug'
 import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,6 +36,12 @@ const PlacasPersonalizadasRoute = PlacasPersonalizadasRouteImport.update({
   path: '/placas-personalizadas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CaldeirariaIndustrialSlugRoute =
+  CaldeirariaIndustrialSlugRouteImport.update({
+    id: '/caldeiraria-industrial_/$slug',
+    path: '/caldeiraria-industrial/$slug',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServicosSlugRoute = ServicosSlugRouteImport.update({
   id: '/servicos/$slug',
   path: '/servicos/$slug',
@@ -46,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/caldeiraria-industrial': typeof CaldeirariaIndustrialRoute
   '/implementos-agricolas': typeof ImplementosAgricolasRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
+  '/caldeiraria-industrial/$slug': typeof CaldeirariaIndustrialSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +61,7 @@ export interface FileRoutesByTo {
   '/caldeiraria-industrial': typeof CaldeirariaIndustrialRoute
   '/implementos-agricolas': typeof ImplementosAgricolasRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
+  '/caldeiraria-industrial/$slug': typeof CaldeirariaIndustrialSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
 }
 export interface FileRoutesById {
@@ -61,6 +70,7 @@ export interface FileRoutesById {
   '/caldeiraria-industrial': typeof CaldeirariaIndustrialRoute
   '/implementos-agricolas': typeof ImplementosAgricolasRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
+  '/caldeiraria-industrial_/$slug': typeof CaldeirariaIndustrialSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
 }
 export interface FileRouteTypes {
@@ -70,6 +80,7 @@ export interface FileRouteTypes {
     | '/caldeiraria-industrial'
     | '/implementos-agricolas'
     | '/placas-personalizadas'
+    | '/caldeiraria-industrial/$slug'
     | '/servicos/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -77,6 +88,7 @@ export interface FileRouteTypes {
     | '/caldeiraria-industrial'
     | '/implementos-agricolas'
     | '/placas-personalizadas'
+    | '/caldeiraria-industrial/$slug'
     | '/servicos/$slug'
   id:
     | '__root__'
@@ -84,6 +96,7 @@ export interface FileRouteTypes {
     | '/caldeiraria-industrial'
     | '/implementos-agricolas'
     | '/placas-personalizadas'
+    | '/caldeiraria-industrial_/$slug'
     | '/servicos/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -92,6 +105,7 @@ export interface RootRouteChildren {
   CaldeirariaIndustrialRoute: typeof CaldeirariaIndustrialRoute
   ImplementosAgricolasRoute: typeof ImplementosAgricolasRoute
   PlacasPersonalizadasRoute: typeof PlacasPersonalizadasRoute
+  CaldeirariaIndustrialSlugRoute: typeof CaldeirariaIndustrialSlugRoute
   ServicosSlugRoute: typeof ServicosSlugRoute
 }
 
@@ -125,6 +139,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlacasPersonalizadasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/caldeiraria-industrial_/$slug': {
+      id: '/caldeiraria-industrial_/$slug'
+      path: '/caldeiraria-industrial/$slug'
+      fullPath: '/caldeiraria-industrial/$slug'
+      preLoaderRoute: typeof CaldeirariaIndustrialSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/servicos/$slug': {
       id: '/servicos/$slug'
       path: '/servicos/$slug'
@@ -140,6 +161,7 @@ const rootRouteChildren: RootRouteChildren = {
   CaldeirariaIndustrialRoute: CaldeirariaIndustrialRoute,
   ImplementosAgricolasRoute: ImplementosAgricolasRoute,
   PlacasPersonalizadasRoute: PlacasPersonalizadasRoute,
+  CaldeirariaIndustrialSlugRoute: CaldeirariaIndustrialSlugRoute,
   ServicosSlugRoute: ServicosSlugRoute,
 }
 export const routeTree = rootRouteImport
