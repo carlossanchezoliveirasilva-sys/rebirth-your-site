@@ -273,7 +273,7 @@ function Home() {
             <span className="text-muted-foreground/70">Potência em produção.</span>
           </h1>
           <p className="mt-8 max-w-xl text-base md:text-lg text-muted-foreground">
-            Fabricação, montagem e manutenção industrial de alta performance para o agronegócio, cooperativas e indústrias pesadas do Centro-Oeste.
+            Fabricação, montagem e manutenção industrial de alta performance para o agronegócio, cooperativas e indústrias pesadas do Centro-Oeste e da região MATOPIBA.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Button asChild variant="bare"><a href="#contato" className="btn-ember inline-flex items-center gap-2 px-7 py-4 font-bold uppercase tracking-widest text-sm">
