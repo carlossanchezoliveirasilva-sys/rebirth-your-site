@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { CaldeirariaQuoteForm } from "@/components/CaldeirariaQuoteForm";
 import { ADDRESS, ADDRESS_LINE, BRAND, INSTAGRAM_URL, MAPS_URRUCUI_URL, PHONE_DISPLAY, PHONE_E164, QUOTE_EMAIL, SITE_URL, whatsappLink } from "@/lib/services";
 import logo from "@/assets/logo-atr.svg.asset.json";
 import welding from "@/assets/hero-welding.jpg.asset.json";
@@ -92,10 +93,7 @@ function CaldeirariaPage() {
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
           <h2 className="font-display text-3xl md:text-4xl uppercase">Solicite um orçamento</h2>
           <p className="mt-6 text-muted-foreground leading-relaxed max-w-3xl">Entre em contato com a ATR METAL e apresente seu projeto, desenho técnico ou necessidade industrial. Nossa equipe avaliará as informações para orientar a solução de fabricação mais adequada.</p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-8 sm:items-center">
-            <Button asChild variant="ember" size="lg"><a href={quoteUrl} target="_blank" rel="noopener noreferrer">Orçamento pelo WhatsApp <ArrowUpRight aria-hidden="true" /></a></Button>
-            <Button asChild variant="steel" size="lg"><a href={`mailto:${QUOTE_EMAIL}?subject=${encodeURIComponent("Orçamento de caldeiraria industrial")}`}><Mail aria-hidden="true" /> Orçamento por e-mail</a></Button>
-          </div>
+          <CaldeirariaQuoteForm />
           <div className="mt-12 border-t border-border/60 pt-8 text-sm text-muted-foreground space-y-3">
             <p>{ADDRESS_LINE}</p><p>Referência: {ADDRESS.reference}</p>
             <div className="flex flex-wrap gap-x-6 gap-y-3">
