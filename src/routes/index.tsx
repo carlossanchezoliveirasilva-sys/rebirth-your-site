@@ -20,7 +20,7 @@ import { Sparks } from "@/components/Sparks";
 import { Counter } from "@/components/Counter";
 import logoAtrAsset from "@/assets/logo-atr.svg.asset.json";
 const logoAtr = logoAtrAsset.url;
-import { services as seoServices, servicesByCategory, INSTAGRAM_URL, MAPS_URRUCUI_URL, ADDRESS, ADDRESS_LINE, SITE_URL } from "@/lib/services";
+import { services as seoServices, servicesByCategory, INSTAGRAM_URL, MAPS_URRUCUI_URL, MAPS_EMBED_SRC, GEO_LAT, GEO_LNG, ADDRESS, ADDRESS_LINE, SITE_URL } from "@/lib/services";
 
 const homeTitle = "ATR METAL | Metalurgia e Serviços Industriais em Uruçuí - PI";
 const homeDesc = "Metalurgia em Uruçuí - PI: corte CNC plasma, oxicorte, dobra e calandragem, tornearia, galpões metálicos, implementos agrícolas, Redler, elevadores de canecas e manutenção de secadores. Centro-Oeste e MATOPIBA.";
@@ -58,6 +58,7 @@ export const Route = createFileRoute("/")({
           postalCode: "64860-000",
           addressCountry: "BR",
         },
+        geo: { "@type": "GeoCoordinates", latitude: GEO_LAT, longitude: GEO_LNG },
         areaServed: ["Região Centro-Oeste", "MATOPIBA"],
         hasMap: MAPS_URRUCUI_URL,
         hasOfferCatalog: {
@@ -627,7 +628,7 @@ function Home() {
             <div className="mt-10 aspect-[16/9] overflow-hidden border border-border/60 relative">
               <iframe
                 title="Localização ATR METAL em Uruçuí - PI"
-                src="https://www.google.com/maps?q=Portal+dos+Cerrados+Uru%C3%A7u%C3%AD+PI&output=embed"
+                src={MAPS_EMBED_SRC}
                 className="absolute inset-0 h-full w-full grayscale contrast-125"
                 loading="lazy"
               />
