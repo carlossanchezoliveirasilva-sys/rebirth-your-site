@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CaldeirariaIndustrialRouteImport } from './routes/caldeiraria-industrial'
 import { Route as ImplementosAgricolasRouteImport } from './routes/implementos-agricolas'
+import { Route as ParadasDeFabricaRetrofitRouteImport } from './routes/paradas-de-fabrica-retrofit'
 import { Route as PlacasPersonalizadasRouteImport } from './routes/placas-personalizadas'
 import { Route as CaldeirariaIndustrialSlugRouteImport } from './routes/caldeiraria-industrial_.$slug'
 import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
@@ -31,6 +32,12 @@ const ImplementosAgricolasRoute = ImplementosAgricolasRouteImport.update({
   path: '/implementos-agricolas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ParadasDeFabricaRetrofitRoute =
+  ParadasDeFabricaRetrofitRouteImport.update({
+    id: '/paradas-de-fabrica-retrofit',
+    path: '/paradas-de-fabrica-retrofit',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PlacasPersonalizadasRoute = PlacasPersonalizadasRouteImport.update({
   id: '/placas-personalizadas',
   path: '/placas-personalizadas',
@@ -52,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/caldeiraria-industrial': typeof CaldeirariaIndustrialRoute
   '/implementos-agricolas': typeof ImplementosAgricolasRoute
+  '/paradas-de-fabrica-retrofit': typeof ParadasDeFabricaRetrofitRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
   '/caldeiraria-industrial/$slug': typeof CaldeirariaIndustrialSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
@@ -60,6 +68,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/caldeiraria-industrial': typeof CaldeirariaIndustrialRoute
   '/implementos-agricolas': typeof ImplementosAgricolasRoute
+  '/paradas-de-fabrica-retrofit': typeof ParadasDeFabricaRetrofitRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
   '/caldeiraria-industrial/$slug': typeof CaldeirariaIndustrialSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
@@ -69,6 +78,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/caldeiraria-industrial': typeof CaldeirariaIndustrialRoute
   '/implementos-agricolas': typeof ImplementosAgricolasRoute
+  '/paradas-de-fabrica-retrofit': typeof ParadasDeFabricaRetrofitRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
   '/caldeiraria-industrial_/$slug': typeof CaldeirariaIndustrialSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
@@ -79,6 +89,7 @@ export interface FileRouteTypes {
     | '/'
     | '/caldeiraria-industrial'
     | '/implementos-agricolas'
+    | '/paradas-de-fabrica-retrofit'
     | '/placas-personalizadas'
     | '/caldeiraria-industrial/$slug'
     | '/servicos/$slug'
@@ -87,6 +98,7 @@ export interface FileRouteTypes {
     | '/'
     | '/caldeiraria-industrial'
     | '/implementos-agricolas'
+    | '/paradas-de-fabrica-retrofit'
     | '/placas-personalizadas'
     | '/caldeiraria-industrial/$slug'
     | '/servicos/$slug'
@@ -95,6 +107,7 @@ export interface FileRouteTypes {
     | '/'
     | '/caldeiraria-industrial'
     | '/implementos-agricolas'
+    | '/paradas-de-fabrica-retrofit'
     | '/placas-personalizadas'
     | '/caldeiraria-industrial_/$slug'
     | '/servicos/$slug'
@@ -104,6 +117,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CaldeirariaIndustrialRoute: typeof CaldeirariaIndustrialRoute
   ImplementosAgricolasRoute: typeof ImplementosAgricolasRoute
+  ParadasDeFabricaRetrofitRoute: typeof ParadasDeFabricaRetrofitRoute
   PlacasPersonalizadasRoute: typeof PlacasPersonalizadasRoute
   CaldeirariaIndustrialSlugRoute: typeof CaldeirariaIndustrialSlugRoute
   ServicosSlugRoute: typeof ServicosSlugRoute
@@ -130,6 +144,13 @@ declare module '@tanstack/react-router' {
       path: '/implementos-agricolas'
       fullPath: '/implementos-agricolas'
       preLoaderRoute: typeof ImplementosAgricolasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/paradas-de-fabrica-retrofit': {
+      id: '/paradas-de-fabrica-retrofit'
+      path: '/paradas-de-fabrica-retrofit'
+      fullPath: '/paradas-de-fabrica-retrofit'
+      preLoaderRoute: typeof ParadasDeFabricaRetrofitRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/placas-personalizadas': {
@@ -160,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CaldeirariaIndustrialRoute: CaldeirariaIndustrialRoute,
   ImplementosAgricolasRoute: ImplementosAgricolasRoute,
+  ParadasDeFabricaRetrofitRoute: ParadasDeFabricaRetrofitRoute,
   PlacasPersonalizadasRoute: PlacasPersonalizadasRoute,
   CaldeirariaIndustrialSlugRoute: CaldeirariaIndustrialSlugRoute,
   ServicosSlugRoute: ServicosSlugRoute,
