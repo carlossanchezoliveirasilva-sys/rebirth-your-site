@@ -58,6 +58,7 @@ export const Route = createFileRoute("/")({
           postalCode: "64860-000",
           addressCountry: "BR",
         },
+        geo: { "@type": "GeoCoordinates", latitude: GEO_LAT, longitude: GEO_LNG },
         areaServed: ["Região Centro-Oeste", "MATOPIBA"],
         hasMap: MAPS_URRUCUI_URL,
         hasOfferCatalog: {
