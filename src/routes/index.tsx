@@ -171,6 +171,10 @@ function Home() {
               Caldeiraria Industrial
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all group-hover:w-full" />
             </Link>
+            <Link to="/paradas-de-fabrica-retrofit" className="text-muted-foreground hover:text-foreground transition-colors relative group">
+              Paradas e Retrofit
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all group-hover:w-full" />
+            </Link>
           </nav>
           <Button asChild variant="ember" className="hidden xl:inline-flex px-5 py-2.5 text-xs font-bold uppercase"><a href="#contato">
             Orçamento
@@ -221,6 +225,10 @@ function Home() {
             </Link>
             <Link to="/caldeiraria-industrial" onClick={() => setMenuOpen(false)} className="flex items-center justify-between py-3 font-display text-lg uppercase tracking-wide text-foreground border-b border-border/40">
               Caldeiraria Industrial
+              <span aria-hidden className="text-primary">→</span>
+            </Link>
+            <Link to="/paradas-de-fabrica-retrofit" onClick={() => setMenuOpen(false)} className="flex items-center justify-between py-3 font-display text-lg uppercase tracking-wide text-foreground border-b border-border/40">
+              Paradas de Fábrica e Retrofit
               <span aria-hidden className="text-primary">→</span>
             </Link>
             <Button asChild variant="bare"><a
@@ -751,6 +759,7 @@ function Home() {
               <li key={s.slug}><Link to="/servicos/$slug" params={{ slug: s.slug }} className="text-muted-foreground hover:text-foreground">{s.name}</Link></li>
             ))}
             <li><Link to="/caldeiraria-industrial" className="text-muted-foreground hover:text-foreground">Caldeiraria Industrial</Link></li>
+            <li><Link to="/paradas-de-fabrica-retrofit" className="text-muted-foreground hover:text-foreground">Paradas de Fábrica e Retrofit</Link></li>
           </ul>
         </div>
         <div className="border-t border-border/60 py-6 px-6 text-center font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
