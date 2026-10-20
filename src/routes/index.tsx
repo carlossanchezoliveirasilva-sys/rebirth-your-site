@@ -99,7 +99,7 @@ const projects = [
   { t: "Obras em aço", c: "Estruturas, plataformas e passarelas", img: plataformaImgAsset.url, w: "lg:col-span-2 lg:row-span-2" },
   { t: "Alimentos e abate de frangos", c: "Indústria de alimentos", img: alimentosImgAsset.url, w: "" },
   { t: "Processamento de soja", c: "Grãos e agroindústria", img: agroImg, w: "" },
-  { t: "Paradas de fábrica", c: "Programadas e emergenciais", img: paradasImgAsset.url, w: "lg:col-span-2" },
+  { t: "Paradas de fábrica", c: "Programadas e emergenciais", img: paradasImgAsset.url, w: "" },
   { t: "Segurança NR-12", c: "Projeto, fabricação e instalação", img: guardaCorpoImgAsset.url, w: "" },
 ];
 
@@ -504,7 +504,7 @@ function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 gap-4 auto-rows-[260px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[260px]">
             {projects.map((p, idx) => (
               <div key={p.t} data-reveal className={`group relative overflow-hidden border border-border/60 ${p.w}`} style={{ animationDelay: `${idx * 80}ms` }}>
                 <img src={p.img} alt={p.t} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" width={1280} height={960} />
