@@ -14,6 +14,7 @@ import { Route as CaldeirariaIndustrialRouteImport } from './routes/caldeiraria-
 import { Route as ImplementosAgricolasRouteImport } from './routes/implementos-agricolas'
 import { Route as ParadasDeFabricaRetrofitRouteImport } from './routes/paradas-de-fabrica-retrofit'
 import { Route as PlacasPersonalizadasRouteImport } from './routes/placas-personalizadas'
+import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as CaldeirariaIndustrialSlugRouteImport } from './routes/caldeiraria-industrial_.$slug'
 import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
 
@@ -43,6 +44,11 @@ const PlacasPersonalizadasRoute = PlacasPersonalizadasRouteImport.update({
   path: '/placas-personalizadas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacidadeRoute = PrivacidadeRouteImport.update({
+  id: '/privacidade',
+  path: '/privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CaldeirariaIndustrialSlugRoute =
   CaldeirariaIndustrialSlugRouteImport.update({
     id: '/caldeiraria-industrial_/$slug',
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/implementos-agricolas': typeof ImplementosAgricolasRoute
   '/paradas-de-fabrica-retrofit': typeof ParadasDeFabricaRetrofitRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/caldeiraria-industrial/$slug': typeof CaldeirariaIndustrialSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
 }
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/implementos-agricolas': typeof ImplementosAgricolasRoute
   '/paradas-de-fabrica-retrofit': typeof ParadasDeFabricaRetrofitRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/caldeiraria-industrial/$slug': typeof CaldeirariaIndustrialSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
 }
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/implementos-agricolas': typeof ImplementosAgricolasRoute
   '/paradas-de-fabrica-retrofit': typeof ParadasDeFabricaRetrofitRoute
   '/placas-personalizadas': typeof PlacasPersonalizadasRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/caldeiraria-industrial_/$slug': typeof CaldeirariaIndustrialSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
 }
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/implementos-agricolas'
     | '/paradas-de-fabrica-retrofit'
     | '/placas-personalizadas'
+    | '/privacidade'
     | '/caldeiraria-industrial/$slug'
     | '/servicos/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/implementos-agricolas'
     | '/paradas-de-fabrica-retrofit'
     | '/placas-personalizadas'
+    | '/privacidade'
     | '/caldeiraria-industrial/$slug'
     | '/servicos/$slug'
   id:
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/implementos-agricolas'
     | '/paradas-de-fabrica-retrofit'
     | '/placas-personalizadas'
+    | '/privacidade'
     | '/caldeiraria-industrial_/$slug'
     | '/servicos/$slug'
   fileRoutesById: FileRoutesById
@@ -119,6 +131,7 @@ export interface RootRouteChildren {
   ImplementosAgricolasRoute: typeof ImplementosAgricolasRoute
   ParadasDeFabricaRetrofitRoute: typeof ParadasDeFabricaRetrofitRoute
   PlacasPersonalizadasRoute: typeof PlacasPersonalizadasRoute
+  PrivacidadeRoute: typeof PrivacidadeRoute
   CaldeirariaIndustrialSlugRoute: typeof CaldeirariaIndustrialSlugRoute
   ServicosSlugRoute: typeof ServicosSlugRoute
 }
@@ -160,6 +173,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlacasPersonalizadasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacidade': {
+      id: '/privacidade'
+      path: '/privacidade'
+      fullPath: '/privacidade'
+      preLoaderRoute: typeof PrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/caldeiraria-industrial_/$slug': {
       id: '/caldeiraria-industrial_/$slug'
       path: '/caldeiraria-industrial/$slug'
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   ImplementosAgricolasRoute: ImplementosAgricolasRoute,
   ParadasDeFabricaRetrofitRoute: ParadasDeFabricaRetrofitRoute,
   PlacasPersonalizadasRoute: PlacasPersonalizadasRoute,
+  PrivacidadeRoute: PrivacidadeRoute,
   CaldeirariaIndustrialSlugRoute: CaldeirariaIndustrialSlugRoute,
   ServicosSlugRoute: ServicosSlugRoute,
 }
