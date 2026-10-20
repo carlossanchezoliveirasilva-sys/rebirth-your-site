@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { Utensils, GlassWater, Sprout, Tractor, Wheat, Trees, Pill, Factory, Warehouse, Package, Milk, Snowflake, Pickaxe, type LucideIcon } from "lucide-react";
 import heroImgAsset from "@/assets/hero-welding.jpg.asset.json";
 const heroImg = heroImgAsset.url;
 import cncImgAsset from "@/assets/cnc-plasma.jpg.asset.json";
@@ -86,13 +87,20 @@ const services = [
   { t: "Munck e serviços complementares", d: "Locação de caminhão munck, reforma de carrocerias e soldagem em chassis de caminhão.", i: "M13 2L3 14h7l-1 8 11-14h-7l1-6z", slug: "locacao-de-munck" },
 ];
 
-const industries = [
-  { t: "Agroindustrial", img: agroImg },
-  { t: "Sementeiras", img: agroImg },
-  { t: "Cooperativas", img: structureImg },
-  { t: "Implementos Agrícolas", img: roloFacaImg },
-  { t: "Fábricas & Usinas", img: conveyorImg },
-  { t: "Armazéns de Grãos", img: agroImg },
+const industries: { t: string; Icon: LucideIcon }[] = [
+  { t: "Indústrias alimentícias", Icon: Utensils },
+  { t: "Indústrias de bebidas", Icon: GlassWater },
+  { t: "Sementeiras e beneficiadoras de sementes", Icon: Sprout },
+  { t: "Agroindústrias", Icon: Tractor },
+  { t: "Processamento de soja", Icon: Wheat },
+  { t: "Papel e celulose", Icon: Trees },
+  { t: "Indústrias farmacêuticas", Icon: Pill },
+  { t: "Usinas de açúcar e álcool", Icon: Factory },
+  { t: "Armazéns e unidades de grãos", Icon: Warehouse },
+  { t: "Indústrias de conservas", Icon: Package },
+  { t: "Laticínios", Icon: Milk },
+  { t: "Abatedouros e frigoríficos", Icon: Snowflake },
+  { t: "Mineradoras", Icon: Pickaxe },
 ];
 
 const projects = [
@@ -468,20 +476,18 @@ function Home() {
                 Indústrias que <span className="text-ember-glow">atendemos.</span>
               </h2>
             </div>
+            <p className="text-muted-foreground max-w-md leading-relaxed">
+              Soluções em caldeiraria industrial, corte CNC plasma, oxicorte, usinagem, soldagem, fabricação sob medida e manutenção industrial para diferentes segmentos, a partir de Uruçuí - PI.
+            </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {industries.map((i) => (
-              <div key={i.t} data-reveal className="group relative aspect-[4/5] overflow-hidden border border-border/60">
-                <img src={i.img} alt={i.t} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" width={1280} height={960} />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-1">Setor</div>
-                  <div className="font-display text-2xl md:text-3xl uppercase">{i.t}</div>
-                </div>
-                <div className="absolute top-4 right-4 h-8 w-8 border border-border/80 grid place-items-center text-muted-foreground group-hover:border-primary group-hover:text-primary transition-colors">→</div>
-              </div>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-border/60 border border-border/60">
+            {industries.map(({ t, Icon }) => (
+              <li key={t} className="group flex items-center gap-4 bg-background p-5 md:p-6 hover:bg-card transition-colors">
+                <span className="h-11 w-11 shrink-0 border border-border/80 grid place-items-center text-primary group-hover:border-primary transition-colors"><Icon className="h-5 w-5" aria-hidden="true" /></span>
+                <span className="font-display text-lg md:text-xl uppercase leading-tight">{t}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
