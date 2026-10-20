@@ -17,8 +17,6 @@ import plataformaImgAsset from "@/assets/cald-plataforma.jpg.asset.json";
 import guardaCorpoImgAsset from "@/assets/cald-guarda-corpo.jpg.asset.json";
 import alimentosImgAsset from "@/assets/proj-alimentos.jpg.asset.json";
 import paradasImgAsset from "@/assets/proj-paradas.jpg.asset.json";
-import calandraImgAsset from "@/assets/calandra.jpg.asset.json";
-const calandraImg = calandraImgAsset.url;
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Sparks } from "@/components/Sparks";
 import { Counter } from "@/components/Counter";
