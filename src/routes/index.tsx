@@ -13,8 +13,10 @@ import roloFacaAsset from "@/assets/impl-rolo-faca.jpg.asset.json";
 const roloFacaImg = roloFacaAsset.url;
 import conveyorImgAsset from "@/assets/conveyor.jpg.asset.json";
 const conveyorImg = conveyorImgAsset.url;
-import calandraImgAsset from "@/assets/calandra.jpg.asset.json";
-const calandraImg = calandraImgAsset.url;
+import plataformaImgAsset from "@/assets/cald-plataforma.jpg.asset.json";
+import guardaCorpoImgAsset from "@/assets/cald-guarda-corpo.jpg.asset.json";
+import alimentosImgAsset from "@/assets/proj-alimentos.jpg.asset.json";
+import paradasImgAsset from "@/assets/proj-paradas.jpg.asset.json";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Sparks } from "@/components/Sparks";
 import { Counter } from "@/components/Counter";
@@ -94,11 +96,11 @@ const industries = [
 ];
 
 const projects = [
-  { t: "Silos & Transporte", c: "Agroindustrial", img: agroImg, w: "lg:col-span-2 lg:row-span-2" },
-  { t: "Implementos Agrícolas", c: "Agro", img: roloFacaImg, w: "" },
-  { t: "Estrutura 40m", c: "Indústria Pesada", img: structureImg, w: "" },
-  { t: "Linha de Conveyors", c: "Logística", img: conveyorImg, w: "lg:col-span-2" },
-  { t: "Calandra 3/4\"", c: "Caldeiraria", img: calandraImg, w: "" },
+  { t: "Obras em aço", c: "Estruturas, plataformas e passarelas", img: plataformaImgAsset.url, w: "lg:col-span-2 lg:row-span-2" },
+  { t: "Alimentos e abate de frangos", c: "Indústria de alimentos", img: alimentosImgAsset.url, w: "" },
+  { t: "Processamento de soja", c: "Grãos e agroindústria", img: agroImg, w: "" },
+  { t: "Paradas de fábrica", c: "Programadas e emergenciais", img: paradasImgAsset.url, w: "" },
+  { t: "Segurança NR-12", c: "Projeto, fabricação e instalação", img: guardaCorpoImgAsset.url, w: "" },
 ];
 
 const reviews = [
@@ -494,15 +496,15 @@ function Home() {
                 <span className="h-px w-16 bg-border" />
               </div>
               <h2 className="text-display font-display uppercase">
-                Obras em <span className="text-ember-glow">aço.</span>
+                Obras em aço e <span className="text-ember-glow">soluções industriais.</span>
               </h2>
             </div>
             <p className="max-w-md text-muted-foreground">
-              Uma seleção de projetos entregues — da chapa bruta à planta industrial completa.
+              A ATR METAL desenvolve e executa projetos e obras em aço para diferentes segmentos industriais, com experiência nos setores de alimentos, abate de frangos e processamento de soja. Atuamos também em paradas de fábrica programadas e emergenciais, além de projetos de segurança conforme a NR-12, incluindo projeto, fabricação e instalação.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 gap-4 auto-rows-[260px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[260px]">
             {projects.map((p, idx) => (
               <div key={p.t} data-reveal className={`group relative overflow-hidden border border-border/60 ${p.w}`} style={{ animationDelay: `${idx * 80}ms` }}>
                 <img src={p.img} alt={p.t} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" width={1280} height={960} />
