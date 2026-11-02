@@ -1,8 +1,8 @@
 export const SITE_URL = "https://atrmetal.com.br";
 export const BRAND = "ATR METAL";
-export const PHONE_DISPLAY = "(64) 99225-3474";
-export const PHONE_E164 = "+5564992253474";
-export const WHATSAPP = "5564992253474";
+export const PHONE_DISPLAY = "(89) 9444-6112";
+export const PHONE_E164 = "+558994446112";
+export const WHATSAPP = "558994446112";
 export const INSTAGRAM_URL = "https://www.instagram.com/atr_metal/";
 // Localização oficial da ATR METAL no Google Maps (ficha "A T R METAL INDÚSTRIA METALÚRGICA", Uruçuí - PI)
 export const MAPS_URRUCUI_URL = "https://www.google.com/maps/place/ATR+METAL+IND%C3%9ASTRIA+METAL%C3%9ARGICA/@-7.2824859,-44.5073468,153m/data=!3m1!1e3!4m6!3m5!1s0x7804fa013ba36b3:0xa81b095707ec2e45!8m2!3d-7.2824859!4d-44.5073468!16s%2Fg%2F11zy82qjc7";
