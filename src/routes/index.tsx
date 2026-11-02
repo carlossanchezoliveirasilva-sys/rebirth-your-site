@@ -51,7 +51,7 @@ export const Route = createFileRoute("/")({
         url: SITE_URL,
         logo: logoAtr.startsWith("https://") ? logoAtr : undefined,
         image: heroImg,
-        telephone: "+55 89 99444-6112",
+        telephone: "+55 89 9444-6112",
         sameAs: [INSTAGRAM_URL],
         address: {
           "@type": "PostalAddress",
@@ -300,7 +300,7 @@ function Home() {
               <span aria-hidden>→</span>
             </a></Button>
             <Button asChild variant="bare"><a
-              href="https://wa.me/5589994446112"
+              href="https://wa.me/558994446112"
               target="_blank" rel="noopener"
               className="btn-outline-steel inline-flex items-center gap-2 px-7 py-4 font-bold uppercase tracking-widest text-sm"
             >
@@ -616,7 +616,7 @@ function Home() {
 
             <div className="mt-10 space-y-5">
               {[
-                { l: "WhatsApp / Telefone", v: "(89) 99444-6112", h: "https://wa.me/5589994446112" },
+                { l: "WhatsApp / Telefone", v: "(89) 9444-6112", h: "https://wa.me/558994446112" },
                 { l: "Endereço", v: ADDRESS_LINE },
                 { l: "Ponto de referência", v: ADDRESS.reference },
                 { l: "Área de atendimento", v: "Centro-Oeste e MATOPIBA, conforme o serviço e a logística" },
@@ -675,7 +675,7 @@ function Home() {
               const corpoEmail = linhas.join("\n").replace(/\*/g, "");
               const assunto = `Orçamento ATR METAL — ${nome}${empresa ? " / " + empresa : ""}`;
 
-              const wa = `https://wa.me/5589994446112?text=${encodeURIComponent(texto)}`;
+              const wa = `https://wa.me/558994446112?text=${encodeURIComponent(texto)}`;
               const mail = `mailto:contato@atrmetal.com.br?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpoEmail)}`;
 
               // Abrir WhatsApp em nova aba
@@ -756,7 +756,7 @@ function Home() {
               <li>{ADDRESS.street}</li>
               <li>{ADDRESS.district} · {ADDRESS.city} - {ADDRESS.state} · CEP {ADDRESS.cep}</li>
               <li><a href={MAPS_URRUCUI_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Como chegar</a></li>
-              <li><a href="https://wa.me/5589994446112" className="hover:text-foreground">(89) 99444-6112</a></li>
+              <li><a href="https://wa.me/558994446112" className="hover:text-foreground">(89) 9444-6112</a></li>
               <li><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Instagram @atr_metal</a></li>
             </ul>
           </div>
