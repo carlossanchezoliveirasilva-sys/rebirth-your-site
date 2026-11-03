@@ -5,3 +5,4 @@
 - [x] Criar página Caldeiraria Industrial, integrar navegação e sitemap, conferir computador e celular sem publicar.
 
 - [x] Nova aba e página Paradas de Fábrica e Retrofit (menu, sitemap, SEO, testes desktop/celular).
+- [x] Incorporar as 34 imagens existentes em public/images/, trocar referências por caminhos locais e verificar todas as páginas sem alterar o visual.

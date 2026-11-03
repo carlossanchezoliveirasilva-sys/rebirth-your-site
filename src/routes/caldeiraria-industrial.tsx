@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CaldeirariaQuoteForm } from "@/components/CaldeirariaQuoteForm";
 import { ADDRESS, ADDRESS_LINE, BRAND, INSTAGRAM_URL, MAPS_URRUCUI_URL, PHONE_DISPLAY, PHONE_E164, QUOTE_EMAIL, SITE_URL, whatsappLink } from "@/lib/services";
-import logo from "@/assets/logo-atr.svg.asset.json";
-import welding from "@/assets/hero-welding.jpg.asset.json";
+import { logo_atr_svg as logo } from "@/lib/images";
+import { hero_welding_jpg as welding } from "@/lib/images";
 
 const title = "Caldeiraria Industrial | ATR METAL";
 const description = "Fabricação de equipamentos e estruturas industriais sob medida. Projetos fornecidos pelo cliente ou desenvolvidos pela ATR METAL.";

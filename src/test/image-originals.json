@@ -1,0 +1,172 @@
+[
+  {
+    "filename": "agro.jpg",
+    "sha256": "369e5187b5babb4fb006678d109574b1584a020db5e8ff8c5bbe5555ea0305a3",
+    "size": 98940
+  },
+  {
+    "filename": "boiler.jpg",
+    "sha256": "4bdf2457a72534b782b15c05eb8e8169c0cfc9a392296a94ab0dd568d687fca7",
+    "size": 106719
+  },
+  {
+    "filename": "calandra.jpg",
+    "sha256": "e243d4f3f48fe1036ef89988b8c57d6c5a2f78a83c81f000fe6902c74731506d",
+    "size": 76635
+  },
+  {
+    "filename": "cald-chamine.png",
+    "sha256": "dcef4c78c24c6326c5a0ec2a960f3d60198c20425bc72b366ac155a0ee2f05e2",
+    "size": 316250
+  },
+  {
+    "filename": "cald-escada.png",
+    "sha256": "b19bd1f0417043d61ea113083e57a285274d9d3be340dd71a2c213f0212d8b06",
+    "size": 1311473
+  },
+  {
+    "filename": "cald-guarda-corpo.jpg",
+    "sha256": "06a8dae667cb3ceebfb67b3b17ee11166c31781206f376d04361103ccca9842f",
+    "size": 500322
+  },
+  {
+    "filename": "cald-multiciclone.png",
+    "sha256": "fbab43f87edff0fc36e2047569183e1a8bf3659c010aa6de3cc49e5b23b422c3",
+    "size": 644805
+  },
+  {
+    "filename": "cald-pipe-rack.jpg",
+    "sha256": "45b51dc02d05652ccff129df0e2465039e6748b51303dfe794aac4e1644b272d",
+    "size": 103589
+  },
+  {
+    "filename": "cald-plataforma.jpg",
+    "sha256": "3b96533e5fd815c3b085fec3c847dc4c49d575755716d000812bb45a9d13c944",
+    "size": 56976
+  },
+  {
+    "filename": "cald-redler.png",
+    "sha256": "742ad180ff73a0d10170af9aa357580caecb8d8d7cbaaa132e1447d315c0b966",
+    "size": 772361
+  },
+  {
+    "filename": "cald-rosca.png",
+    "sha256": "1d75cc550b9e5479d616395b414afaebf9b9acaf406f7117b0eae15fa9fcc42a",
+    "size": 1064702
+  },
+  {
+    "filename": "cald-ventilador.jpg",
+    "sha256": "6f58a6383d7d8b487e457c89d56a8fc077c948e1fee315bdf55a4b5a124166ad",
+    "size": 121974
+  },
+  {
+    "filename": "cnc-plasma.jpg",
+    "sha256": "7d272995444b72b88692f353faec24eeabffc833c903fbf914fc082a1fe934d4",
+    "size": 107924
+  },
+  {
+    "filename": "conveyor.jpg",
+    "sha256": "c787def8480d89c71ab4a328168955dc4124bff618151411ffb205f5547494f6",
+    "size": 128927
+  },
+  {
+    "filename": "hero-welding.jpg",
+    "sha256": "816cf3cbbe8756f7f71c76434e2f5897fd5cdbc360b91ff801c58be007568225",
+    "size": 165219
+  },
+  {
+    "filename": "impl-basculante.jpg",
+    "sha256": "7d4a1eaa881a99f3dc974c160f9469f689ee1a43df5d9d7263ea40db43ad45ef",
+    "size": 147629
+  },
+  {
+    "filename": "impl-destorrador.jpg",
+    "sha256": "0b42c6246e4be01f0f6268fcad994cdec41b9f3384b773778233e4d60f949cae",
+    "size": 213346
+  },
+  {
+    "filename": "impl-graneleira.jpg",
+    "sha256": "3aa2a568ca6aa9fcd1be2f6ca8a2e64dc3955626d52e257373eeb281ed79f18e",
+    "size": 151813
+  },
+  {
+    "filename": "impl-prancha.jpg",
+    "sha256": "6ae2a9f746a97ff9cfc4895389a97e50f522f70c19b5e041ef84f680631e3f9f",
+    "size": 165569
+  },
+  {
+    "filename": "impl-rolo-faca.jpg",
+    "sha256": "7129465a223811b28950e42d412e1dd5d534f82e2247b42a08b1c764222fafd8",
+    "size": 174318
+  },
+  {
+    "filename": "impl-silo-cocho.jpg",
+    "sha256": "66e907069a7ca3eecab9bad8951ac660d1844330d7994345ba1f05a4904a669d",
+    "size": 162814
+  },
+  {
+    "filename": "impl-tanque-diesel.jpg",
+    "sha256": "a14aeda85fb8e812f3baac45ee35a3c256eb0309ba3af04b3508a3b2f6fca4da",
+    "size": 159472
+  },
+  {
+    "filename": "impl-tanque-pipa.jpg",
+    "sha256": "0d2e50f44a7258dbe889a9653ec686f82c860c25d97929696c80901304caf97c",
+    "size": 177990
+  },
+  {
+    "filename": "logo-atr.svg",
+    "sha256": "0ff2b32c0776904faf6f91323e3a3d84e97dd881910465bfaf6c15f21e5284a2",
+    "size": 6896
+  },
+  {
+    "filename": "placa-arte.jpg",
+    "sha256": "76917a97ca1cee15a225e7b16fb4a6da9db028ef8a02d68e95c604dbb7f9ebb4",
+    "size": 153469
+  },
+  {
+    "filename": "placa-decorativa.jpg",
+    "sha256": "5100f55ce602c27f8a9d3c566aacfb9ea87ed2f3ce7b27b0f0edfbc67345d00d",
+    "size": 111259
+  },
+  {
+    "filename": "placa-empresa.jpg",
+    "sha256": "4fe67329ec2c9ba443f48fb17153782ee9fc7ed94e00e497ba25b07f6d073966",
+    "size": 87455
+  },
+  {
+    "filename": "placa-fazenda.jpg",
+    "sha256": "afb8624bd1b42d9c309059fac2c7a9d729e4c4dfdd6310a8ef03a16bb0ecf9d8",
+    "size": 148566
+  },
+  {
+    "filename": "placa-numeros.jpg",
+    "sha256": "b2fb7b7812673853423aa38af08f4365c21dfa73a1676de7f724dcd16b3d430c",
+    "size": 150076
+  },
+  {
+    "filename": "placas-hero.jpg",
+    "sha256": "3fad30b63dd0c6269dedfeff679e8ea6a1c964fe4b61be05c2a647a1d4da5da5",
+    "size": 225690
+  },
+  {
+    "filename": "proj-alimentos.jpg",
+    "sha256": "7b470419f4cffbd30fa073dade89bf783ca3923104d8cdfeec726257fde473cc",
+    "size": 195094
+  },
+  {
+    "filename": "proj-paradas.jpg",
+    "sha256": "7c02099abe0917f273f20acac831150cca0867d74d55f3cee97c5681a81a0c82",
+    "size": 173844
+  },
+  {
+    "filename": "steel-texture.jpg",
+    "sha256": "9cde378dc9a66ae836319767c3a147c82b68b55ebe157127385d100a62e75ab1",
+    "size": 262869
+  },
+  {
+    "filename": "structure.jpg",
+    "sha256": "3d8fd2fb36895e51fb59aaf8126c9fc53ee45b5067fd21f02f722cb1f543b334",
+    "size": 194858
+  }
+]

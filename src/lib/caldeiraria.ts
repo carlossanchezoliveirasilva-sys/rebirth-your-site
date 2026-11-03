@@ -1,12 +1,12 @@
-import ventilador from "@/assets/cald-ventilador.jpg.asset.json";
-import chamine from "@/assets/cald-chamine.png.asset.json";
-import multiciclone from "@/assets/cald-multiciclone.png.asset.json";
-import redler from "@/assets/cald-redler.png.asset.json";
-import rosca from "@/assets/cald-rosca.png.asset.json";
-import pipeRack from "@/assets/cald-pipe-rack.jpg.asset.json";
-import plataforma from "@/assets/cald-plataforma.jpg.asset.json";
-import escada from "@/assets/cald-escada.png.asset.json";
-import guardaCorpo from "@/assets/cald-guarda-corpo.jpg.asset.json";
+import { cald_ventilador_jpg as ventilador } from "@/lib/images";
+import { cald_chamine_png as chamine } from "@/lib/images";
+import { cald_multiciclone_png as multiciclone } from "@/lib/images";
+import { cald_redler_png as redler } from "@/lib/images";
+import { cald_rosca_png as rosca } from "@/lib/images";
+import { cald_pipe_rack_jpg as pipeRack } from "@/lib/images";
+import { cald_plataforma_jpg as plataforma } from "@/lib/images";
+import { cald_escada_png as escada } from "@/lib/images";
+import { cald_guarda_corpo_jpg as guardaCorpo } from "@/lib/images";
 
 export type CaldeirariaItem = {
   slug: string;

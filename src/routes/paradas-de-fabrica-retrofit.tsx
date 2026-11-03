@@ -3,10 +3,10 @@ import { ArrowUpRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { ADDRESS, ADDRESS_LINE, BRAND, INSTAGRAM_URL, MAPS_URRUCUI_URL, PHONE_DISPLAY, PHONE_E164, QUOTE_EMAIL, SITE_URL, whatsappLink } from "@/lib/services";
-import logo from "@/assets/logo-atr.svg.asset.json";
-import boilerImg from "@/assets/boiler.jpg.asset.json";
-import weldingImg from "@/assets/hero-welding.jpg.asset.json";
-import structureImg from "@/assets/structure.jpg.asset.json";
+import { logo_atr_svg as logo } from "@/lib/images";
+import { boiler_jpg as boilerImg } from "@/lib/images";
+import { hero_welding_jpg as weldingImg } from "@/lib/images";
+import { structure_jpg as structureImg } from "@/lib/images";
 
 const title = "Paradas de Fábrica e Retrofit Industrial | ATR METAL";
 const description = "Serviços de paradas programadas, manutenção emergencial e retrofit industrial. A ATR METAL oferece soluções em caldeiraria, soldagem, reparação e modernização industrial.";

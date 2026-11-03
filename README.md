@@ -24,3 +24,11 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Imagens incluídas no download
+
+As 34 imagens originais (fotos reais, imagens já criadas por IA e logotipo) estão incorporadas em `public/images/`. As páginas usam caminhos locais `/images/...`, centralizados em `src/lib/images.ts`, sem depender do serviço de imagens da Lovable. Os antigos arquivos `.asset.json` ficam apenas como registro da origem e não são usados pelas páginas.
+
+Inclua o diretório `public/images/` ao baixar ou copiar o código. O Vite copia os arquivos públicos para a saída de publicação; mantenha a pasta `images/` na raiz pública do domínio. Os caminhos atuais pressupõem publicação na raiz, não em uma subpasta.
+
+Esta organização torna **as imagens** portáveis, mas não converte a aplicação TanStack Start em uma aplicação estática de Vite puro. A publicação completa na HostGator exige uma configuração compatível com a aplicação ou uma exportação estática separada; essa conversão não foi realizada nesta alteração.

@@ -12,7 +12,7 @@
 ## Application rules
 - Keep the target TanStack starter runtime and dependencies; migrate only inspected presentation code to avoid importing external runtime configuration.
 - Preserve the source site's two public URLs and in-page navigation during recreation so existing navigation behavior remains intact.
-- Store imported photos and logos as asset pointers; use their URLs rather than committing binary media.
+- Keep the existing photos and logo as original local files in public/images/ and reference them through src/lib/images.ts so source downloads include media without depending on Lovable hosting; retain old asset pointers only as provenance.
 - Keep quote requests as WhatsApp and email handoffs, with reference images attached manually in WhatsApp; the source has no database or automatic email delivery.
 - Keep plate pricing in a browser-safe calculation module with regression tests so original estimates remain consistent.
 - Service pages are data-driven from src/lib/services.ts via /servicos/$slug; keep public/sitemap.xml in sync when services change.

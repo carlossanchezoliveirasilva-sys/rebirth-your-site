@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { BRAND, PHONE_DISPLAY, QUOTE_EMAIL, SITE_URL, whatsappLink } from "@/lib/services";
 import { caldeirariaItems, caldeirariaMaterials, caldeirariaQuoteMessage } from "@/lib/caldeiraria";
-import logo from "@/assets/logo-atr.svg.asset.json";
+import { logo_atr_svg as logo } from "@/lib/images";
 
 export const Route = createFileRoute("/caldeiraria-industrial_/$slug")({
   loader: ({ params }) => {

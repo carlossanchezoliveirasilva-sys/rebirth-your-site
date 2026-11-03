@@ -5,14 +5,14 @@ import {
   BRAND, INSTAGRAM_URL, MAPS_URRUCUI_URL, PHONE_DISPLAY, PHONE_E164, ADDRESS, ADDRESS_LINE, SERVICE_AREA, SITE_URL,
   getService, legacySlugs, services, whatsappLink, type ImageKey,
 } from "@/lib/services";
-import calandra from "@/assets/calandra.jpg.asset.json";
-import cnc from "@/assets/cnc-plasma.jpg.asset.json";
-import structure from "@/assets/structure.jpg.asset.json";
-import agro from "@/assets/agro.jpg.asset.json";
-import boiler from "@/assets/boiler.jpg.asset.json";
-import conveyor from "@/assets/conveyor.jpg.asset.json";
-import hero from "@/assets/hero-welding.jpg.asset.json";
-import logoAsset from "@/assets/logo-atr.svg.asset.json";
+import { calandra_jpg as calandra } from "@/lib/images";
+import { cnc_plasma_jpg as cnc } from "@/lib/images";
+import { structure_jpg as structure } from "@/lib/images";
+import { agro_jpg as agro } from "@/lib/images";
+import { boiler_jpg as boiler } from "@/lib/images";
+import { conveyor_jpg as conveyor } from "@/lib/images";
+import { hero_welding_jpg as hero } from "@/lib/images";
+import { logo_atr_svg as logoAsset } from "@/lib/images";
 
 const images: Record<ImageKey, string> = {
   calandra: calandra.url, cnc: cnc.url, structure: structure.url, agro: agro.url,
