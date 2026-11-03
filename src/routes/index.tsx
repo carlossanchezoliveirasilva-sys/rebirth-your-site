@@ -505,9 +505,14 @@ function Home() {
                 Obras em aço e <span className="text-ember-glow">soluções industriais.</span>
               </h2>
             </div>
-            <p className="max-w-md text-muted-foreground">
-              A ATR METAL desenvolve e executa projetos e obras em aço para diferentes segmentos industriais, com experiência nos setores de alimentos, abate de frangos e processamento de soja. Atuamos também em paradas de fábrica programadas e emergenciais, além de projetos de segurança conforme a NR-12, incluindo projeto, fabricação e instalação.
-            </p>
+            <div className="max-w-md text-muted-foreground space-y-4">
+              <p>
+                A ATR METAL desenvolve, fabrica e executa projetos e soluções em estruturas e equipamentos metálicos para diversos segmentos industriais e agroindustriais. Atuamos em setores como alimentício, farmacêutico, frigorífico, abatedouros, processamento de grãos e soja, entre outros.
+              </p>
+              <p>
+                Oferecemos suporte em paradas programadas e emergenciais de fábricas e unidades industriais, além do desenvolvimento e execução de projetos de adequação à NR-12, abrangendo projeto, fabricação e instalação de proteções, dispositivos e soluções voltadas à segurança de máquinas e equipamentos.
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[260px]">
