@@ -23,7 +23,7 @@ import { Sparks } from "@/components/Sparks";
 import { Counter } from "@/components/Counter";
 import { logo_atr_svg as logoAtrAsset } from "@/lib/images";
 const logoAtr = logoAtrAsset.url;
-import { services as seoServices, servicesByCategory, INSTAGRAM_URL, MAPS_URRUCUI_URL, MAPS_EMBED_SRC, GEO_LAT, GEO_LNG, ADDRESS, ADDRESS_LINE, SITE_URL } from "@/lib/services";
+import { services as seoServices, servicesByCategory, INSTAGRAM_URL, MAPS_URRUCUI_URL, MAPS_EMBED_SRC, GEO_LAT, GEO_LNG, ADDRESS, ADDRESS_LINE, SITE_URL, PHONE_E164, PHONE_CO_DISPLAY, PHONE_CO_E164 } from "@/lib/services";
 
 const homeTitle = "ATR METAL | Metalurgia e Serviços Industriais em Uruçuí - PI";
 const homeDesc = "Metalurgia em Uruçuí - PI: corte CNC plasma, oxicorte, dobra e calandragem, tornearia, galpões metálicos, implementos agrícolas, Redler, elevadores de canecas e manutenção de secadores. Centro-Oeste e MATOPIBA.";
@@ -53,6 +53,10 @@ export const Route = createFileRoute("/")({
         image: heroImg,
         telephone: "+55 89 9444-6112",
         sameAs: [INSTAGRAM_URL],
+        contactPoint: [
+          { "@type": "ContactPoint", contactType: "sales", telephone: PHONE_E164, areaServed: ["Piauí", "MATOPIBA"] },
+          { "@type": "ContactPoint", contactType: "sales", telephone: PHONE_CO_E164, areaServed: "Região Centro-Oeste" },
+        ],
         address: {
           "@type": "PostalAddress",
           streetAddress: `${ADDRESS.street}, ${ADDRESS.district}`,
@@ -622,6 +626,7 @@ function Home() {
             <div className="mt-10 space-y-5">
               {[
                 { l: "WhatsApp / Telefone", v: "(89) 9444-6112", h: "https://wa.me/558994446112" },
+                { l: "WhatsApp Centro-Oeste", v: PHONE_CO_DISPLAY, h: `https://wa.me/5564992253474` },
                 { l: "Endereço", v: ADDRESS_LINE },
                 { l: "Ponto de referência", v: ADDRESS.reference },
                 { l: "Área de atendimento", v: "Centro-Oeste e MATOPIBA, conforme o serviço e a logística" },
@@ -762,6 +767,7 @@ function Home() {
               <li>{ADDRESS.district} · {ADDRESS.city} - {ADDRESS.state} · CEP {ADDRESS.cep}</li>
               <li><a href={MAPS_URRUCUI_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Como chegar</a></li>
               <li><a href="https://wa.me/558994446112" className="hover:text-foreground">(89) 9444-6112</a></li>
+              <li><a href="https://wa.me/5564992253474" className="hover:text-foreground">Centro-Oeste: {PHONE_CO_DISPLAY}</a></li>
               <li><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Instagram @atr_metal</a></li>
             </ul>
           </div>
