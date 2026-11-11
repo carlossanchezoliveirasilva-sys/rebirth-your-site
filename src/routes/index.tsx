@@ -96,20 +96,20 @@ const industries: { t: string; Icon: LucideIcon }[] = [
   { t: "Indústrias de bebidas", Icon: GlassWater },
   { t: "Sementeiras e beneficiadoras de sementes", Icon: Sprout },
   { t: "Agroindústrias", Icon: Tractor },
-  { t: "Processamento de soja", Icon: Wheat },
-  { t: "Papel e celulose", Icon: Trees },
+  { t: "Indústrias de processamento de soja", Icon: Wheat },
+  { t: "Indústrias de papel e celulose", Icon: Trees },
   { t: "Indústrias farmacêuticas", Icon: Pill },
   { t: "Usinas de açúcar e álcool", Icon: Factory },
-  { t: "Armazéns e unidades de grãos", Icon: Warehouse },
-  { t: "Indústrias de conservas", Icon: Package },
+  { t: "Armazéns e unidades de processamento de grãos", Icon: Warehouse },
+  { t: "Indústrias de conservas e outros segmentos industriais", Icon: Package },
   { t: "Laticínios", Icon: Milk },
-  { t: "Abatedouros e frigoríficos", Icon: Snowflake },
+  { t: "Frigoríficos e unidades de processamento de carnes", Icon: Snowflake },
   { t: "Mineradoras", Icon: Pickaxe },
 ];
 
 const projects = [
   { t: "Obras em aço", c: "Estruturas, plataformas e passarelas", img: plataformaImgAsset.url, w: "lg:col-span-2 lg:row-span-2" },
-  { t: "Alimentos e abate de frangos", c: "Indústria de alimentos", img: alimentosImgAsset.url, w: "" },
+  { t: "Indústrias alimentícias e frigoríficos", c: "Fabricação, manutenção e adequações", img: alimentosImgAsset.url, w: "" },
   { t: "Processamento de soja", c: "Grãos e agroindústria", img: agroImg, w: "" },
   { t: "Paradas de fábrica", c: "Programadas e emergenciais", img: paradasImgAsset.url, w: "" },
   { t: "Segurança NR-12", c: "Projeto, fabricação e instalação", img: guardaCorpoImgAsset.url, w: "" },
@@ -511,7 +511,7 @@ function Home() {
             </div>
             <div className="max-w-md text-muted-foreground space-y-4">
               <p>
-                A ATR METAL desenvolve, fabrica e executa projetos e soluções em estruturas e equipamentos metálicos para diversos segmentos industriais e agroindustriais. Atuamos em setores como alimentício, farmacêutico, frigorífico, abatedouros, processamento de grãos e soja, entre outros.
+                A ATR METAL desenvolve, fabrica e executa projetos e soluções em estruturas e equipamentos metálicos para diversos segmentos industriais e agroindustriais. Atuamos em setores como indústrias alimentícias, frigoríficos e unidades de processamento de carnes, indústrias farmacêuticas, laticínios, bebidas, processamento de grãos e soja, entre outros.
               </p>
               <p>
                 Oferecemos suporte em paradas programadas e emergenciais de fábricas e unidades industriais, além do desenvolvimento e execução de projetos de adequação à NR-12, abrangendo projeto, fabricação e instalação de proteções, dispositivos e soluções voltadas à segurança de máquinas e equipamentos.
